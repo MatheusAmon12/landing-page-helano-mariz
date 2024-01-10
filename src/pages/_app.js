@@ -1,5 +1,32 @@
-import '@/styles/globals.css'
+import App from 'next/app'
+import Head from 'next/head'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import { CacheProvider } from '@emotion/react'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import createEmotionCache from '../../createEmotionCache'
+import theme from '@/theme'
+ 
+export default function MyApp({ Component, pageProps }) {
+  const cache = createEmotionCache()
+
+  return (
+    <>
+      <Head>
+        <title> Helano Mariz </title>
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+      </Head>
+      <CssBaseline />
+      <CacheProvider value={cache}>
+          <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+          </ThemeProvider>
+      </CacheProvider>
+    </>
+  )
+}
+ 
+MyApp.getInitialProps = async (context) => {
+  const ctx = await App.getInitialProps(context)
+ 
+  return { ...ctx}
 }
