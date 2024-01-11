@@ -1,5 +1,6 @@
 import TemplateDefault from '@/templates/Default'
-import { Box, Button, Container, Grid, Typography } from '@mui/material'
+import { FormControl } from '@mui/base'
+import { Box, Button, Container, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
 
 const useStyles = makeStyles()((theme) => {
@@ -79,15 +80,19 @@ const Home = () => {
       <Container maxWidth={`100vw`} className={classes.containerTop}>
         <Container maxWidth={'md'}>
           <img src='/images/logoHumanizar.png' />
-          <Typography color={'secondary'} className={classes.promise}>
+
+          <Typography component={'h1'} color={'secondary'} className={classes.promise}>
             Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque quisque
           </Typography>
-          <Typography className={classes.subPromise}>
+
+          <Typography component={'h2'} className={classes.subPromise}>
             Lorem ipsum dolor sit amet consectetur. Condimentum lectus commodo tincidunt nec faucibus aliquam. Dis sagittis ut facilisi duis ac id neque. Facilisis id ed.
           </Typography>
+
           <Button variant='contained' size='large' color='secondary' className={classes.button}>
             Quero participar
           </Button>
+
         </Container>
       </Container>
 
@@ -105,7 +110,7 @@ const Home = () => {
             </Grid>
 
             <Grid item md='6' sm='12'>
-              <Typography className={ classes.title }>
+              <Typography component={'h3'} className={ classes.title }>
                 Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque
               </Typography>
 
@@ -123,11 +128,11 @@ const Home = () => {
                     </Grid>
                     
                     <Grid item md='6' sm='12'>
-                      <Typography className={classes.subTitle}>
+                      <Typography component={'h3'} className={classes.subTitle}>
                         Lorem ipsum
                       </Typography>
 
-                      <Typography className={classes.textWidth}>
+                      <Typography component={'p'} className={classes.textWidth}>
                         Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
                       </Typography>
                     </Grid>
@@ -141,11 +146,11 @@ const Home = () => {
                     </Grid>
                     
                     <Grid item md='6' sm='12'>
-                      <Typography className={classes.subTitle}>
+                      <Typography component={'h3'} className={classes.subTitle}>
                         Lorem ipsum
                       </Typography>
 
-                      <Typography className={classes.textWidth}>
+                      <Typography component={'p'} className={classes.textWidth}>
                         Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
                       </Typography>
                     </Grid>
@@ -159,11 +164,11 @@ const Home = () => {
                     </Grid>
                     
                     <Grid item md='6' sm='12'>
-                      <Typography className={classes.subTitle}>
+                      <Typography component={'h3'} className={classes.subTitle}>
                         Lorem ipsum
                       </Typography>
 
-                      <Typography className={classes.textWidth}>
+                      <Typography component={'p'} className={classes.textWidth}>
                         Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
                       </Typography>
                     </Grid>
@@ -192,23 +197,23 @@ const Home = () => {
 
           <Box className={classes.priceBox}>
             <Typography textAlign={'center'}>
-              <Typography>
+              <Typography component={'p'}>
                 <s>de R$997,90</s>
               </Typography>
 
-              <Typography style={{fontSize: '24px'}}>
+              <Typography component={'p'} style={{fontSize: '24px'}}>
                 por apenas
               </Typography>
 
-              <Typography style={{fontSize: '32px', fontWeight: 'bold'}}>
+              <Typography component={'p'} style={{fontSize: '32px', fontWeight: 'bold'}}>
                 12x de
               </Typography>
 
-              <Typography style={{fontSize: '88px', fontWeight: 'bold'}}>
+              <Typography component={'p'} style={{fontSize: '88px', fontWeight: 'bold'}}>
                 R$57,90
               </Typography>
 
-              <Typography style={{fontSize: '24px'}}>
+              <Typography component={'p'} style={{fontSize: '24px'}}>
                 ou R$597,90 à vista
               </Typography>
             </Typography>
@@ -225,18 +230,81 @@ const Home = () => {
       }
       <Container maxWidth={`100vw`} className={`${classes.pageAbout} ${classes.containerPages}`}>
         <Container maxWidth={'md'}>
-          <Typography color={'#1C92D2'} className={classes.subTitle}>
+          <Typography component={'h3'} color={'#1C92D2'} className={classes.subTitle}>
             SOBRE
           </Typography>
 
-          <Typography color={'#EBE5E5'} className={classes.title}>
+          <Typography component={'h2'} color={'#EBE5E5'} className={classes.title}>
             HELANO MARIZ
           </Typography>
           
-          <Typography color={'#EBE5E5'} className={classes.textWidth}>
+          <Typography component={'p'} color={'#EBE5E5'} className={classes.textWidth}>
             Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
             Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
           </Typography>
+        </Container>
+      </Container>
+
+      {
+        //Quinta página (formulário)
+      }
+      <Container maxWidth={`100vw`} className={classes.containerPages}>
+        <Container maxWidth='md'>
+          <Typography component={'h3'} textAlign={'center'} style={{margin: '0 auto'}} className={classes.title}>
+            Agora é hora de fazer a sua inscrição
+          </Typography>
+
+          <Typography component={'p'} textAlign={'center'} style={{marginBottom: '40px 0'}}>
+            Informe seu melhor e-mail para te avisarmos sobre as aulas
+          </Typography>
+
+          <Container maxWidth={'sm'}>
+            <form>
+              <FormControl>
+
+                <InputLabel>
+                  Nome
+                </InputLabel>
+
+                <Input
+                  name='name'
+                  variant=''
+                  fullWidth
+                  autoComplete
+                />
+              </FormControl>
+
+              <FormControl style={{margin: '40px 0px'}}>
+
+                <InputLabel>
+                  E-mail
+                </InputLabel>
+
+                <Input
+                  name='name'
+                  outlined
+                  fullWidth
+                  autoComplete
+                />
+
+              </FormControl>
+
+              <FormControl>
+
+                <InputLabel>
+                  Celular
+                </InputLabel>
+
+                <Input
+                  name='name'
+                  outlined
+                  fullWidth
+                  autoComplete
+                />
+
+              </FormControl>
+            </form>
+          </Container>
         </Container>
       </Container>
 
