@@ -1,7 +1,11 @@
-import TemplateDefault from '@/templates/Default'
 import { FormControl } from '@mui/base'
-import { Box, Button, Container, Grid, Input, InputLabel, Typography } from '@mui/material'
+import { Box, Button, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
+
+import { Formik } from 'formik'
+
+import TemplateDefault from '@/templates/Default'
+import { initialValues, validationSchema } from './formValues'
 
 const useStyles = makeStyles()((theme) => {
   return{
@@ -64,6 +68,11 @@ const useStyles = makeStyles()((theme) => {
       backgroundImage: 'url(/images/bgAbout.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'left center'
+    },
+    formBox: {
+      maxWidth: '520px',
+      minWidth: '350px',
+      margin: '80px auto 0'
     }
 
   }
@@ -71,6 +80,13 @@ const useStyles = makeStyles()((theme) => {
 
 const Home = () => {
   const { classes } = useStyles()
+  const formValues = {
+    ...initialValues
+  }
+  
+  const handleFormSubmit = (values) => {
+    console.log('Deu certo aqui', values)
+  }
 
   return (
     <TemplateDefault>
@@ -81,11 +97,11 @@ const Home = () => {
         <Container maxWidth={'md'}>
           <img src='/images/logoHumanizar.png' />
 
-          <Typography component={'h1'} color={'secondary'} className={classes.promise}>
+          <Typography color={'secondary'} className={classes.promise}>
             Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque quisque
           </Typography>
 
-          <Typography component={'h2'} className={classes.subPromise}>
+          <Typography className={classes.subPromise}>
             Lorem ipsum dolor sit amet consectetur. Condimentum lectus commodo tincidunt nec faucibus aliquam. Dis sagittis ut facilisi duis ac id neque. Facilisis id ed.
           </Typography>
 
@@ -105,12 +121,12 @@ const Home = () => {
             //Grid do ícone Brain com todo conteúdo
           }
           <Grid container className={classes.grid}>
-            <Grid item md='6' sm='12'>
+            <Grid item md={6} sm={12}>
               <img src='/images/brainIcon.png' className={classes.brainIcon}/>
             </Grid>
 
-            <Grid item md='6' sm='12'>
-              <Typography component={'h3'} className={ classes.title }>
+            <Grid item md={6} sm={12}>
+              <Typography  className={ classes.title }>
                 Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque
               </Typography>
 
@@ -123,16 +139,16 @@ const Home = () => {
                     //Grid do ícone e seu respectivo texto
                   }
                   <Grid container className={classes.grid}>
-                    <Grid item md='6' sm='12'>
+                    <Grid item md={6} sm={12}>
                       <img src='/images/iconConhece-te.png' />
                     </Grid>
                     
-                    <Grid item md='6' sm='12'>
-                      <Typography component={'h3'} className={classes.subTitle}>
+                    <Grid item md={6} sm={12}>
+                      <Typography  className={classes.subTitle}>
                         Lorem ipsum
                       </Typography>
 
-                      <Typography component={'p'} className={classes.textWidth}>
+                      <Typography className={classes.textWidth}>
                         Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
                       </Typography>
                     </Grid>
@@ -141,16 +157,16 @@ const Home = () => {
 
                 <Grid item>
                   <Grid container className={classes.grid}>
-                    <Grid item md='6' sm='12'>
+                    <Grid item md={6} sm={12}>
                       <img src='/images/iconAceita-te.png' />
                     </Grid>
                     
-                    <Grid item md='6' sm='12'>
-                      <Typography component={'h3'} className={classes.subTitle}>
+                    <Grid item md={6} sm={12}>
+                      <Typography  className={classes.subTitle}>
                         Lorem ipsum
                       </Typography>
 
-                      <Typography component={'p'} className={classes.textWidth}>
+                      <Typography className={classes.textWidth}>
                         Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
                       </Typography>
                     </Grid>
@@ -159,16 +175,16 @@ const Home = () => {
 
                 <Grid item>
                   <Grid container className={classes.grid}>
-                    <Grid item md='6' sm='12'>
+                    <Grid item md={6} sm={12}>
                       <img src='/images/iconTransforma-te.png' />
                     </Grid>
                     
-                    <Grid item md='6' sm='12'>
-                      <Typography component={'h3'} className={classes.subTitle}>
+                    <Grid item md={6} sm={12}>
+                      <Typography  className={classes.subTitle}>
                         Lorem ipsum
                       </Typography>
 
-                      <Typography component={'p'} className={classes.textWidth}>
+                      <Typography className={classes.textWidth}>
                         Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
                       </Typography>
                     </Grid>
@@ -190,32 +206,30 @@ const Home = () => {
         //Terceira página (preços)
       }
       <Container maxWidth={`100vw`} className={classes.containerPages}>
-        <Container maxWidth='md'>
+        <Container maxWidth={'md'}>
           <Typography textAlign={'center'}  style={{margin: '0 auto 80px'}} className={classes.title}>
             Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque
           </Typography>
 
           <Box className={classes.priceBox}>
             <Typography textAlign={'center'}>
-              <Typography component={'p'}>
-                <s>de R$997,90</s>
-              </Typography>
+              <s>de R$997,90</s>
+            </Typography>
 
-              <Typography component={'p'} style={{fontSize: '24px'}}>
-                por apenas
-              </Typography>
+            <Typography textAlign={'center'} style={{fontSize: '24px'}}>
+              por apenas
+            </Typography>
 
-              <Typography component={'p'} style={{fontSize: '32px', fontWeight: 'bold'}}>
-                12x de
-              </Typography>
+            <Typography textAlign={'center'} style={{fontSize: '32px', fontWeight: 'bold'}}>
+              12x de
+            </Typography>
 
-              <Typography component={'p'} style={{fontSize: '88px', fontWeight: 'bold'}}>
-                R$57,90
-              </Typography>
+            <Typography textAlign={'center'} style={{fontSize: '88px', fontWeight: 'bold'}}>
+              R$57,90
+            </Typography>
 
-              <Typography component={'p'} style={{fontSize: '24px'}}>
-                ou R$597,90 à vista
-              </Typography>
+            <Typography textAlign={'center'} style={{fontSize: '24px'}}>
+              ou R$597,90 à vista
             </Typography>
 
             <Button variant='contained' size='large' color='secondary' style={{display: 'block', margin: '80px auto 0px'}} className={classes.button}>
@@ -230,15 +244,15 @@ const Home = () => {
       }
       <Container maxWidth={`100vw`} className={`${classes.pageAbout} ${classes.containerPages}`}>
         <Container maxWidth={'md'}>
-          <Typography component={'h3'} color={'#1C92D2'} className={classes.subTitle}>
+          <Typography  color={'#1C92D2'} className={classes.subTitle}>
             SOBRE
           </Typography>
 
-          <Typography component={'h2'} color={'#EBE5E5'} className={classes.title}>
+          <Typography color={'#EBE5E5'} className={classes.title}>
             HELANO MARIZ
           </Typography>
           
-          <Typography component={'p'} color={'#EBE5E5'} className={classes.textWidth}>
+          <Typography color={'#EBE5E5'} className={classes.textWidth}>
             Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
             Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
           </Typography>
@@ -249,62 +263,92 @@ const Home = () => {
         //Quinta página (formulário)
       }
       <Container maxWidth={`100vw`} className={classes.containerPages}>
-        <Container maxWidth='md'>
-          <Typography component={'h3'} textAlign={'center'} style={{margin: '0 auto'}} className={classes.title}>
+        <Container maxWidth={'md'}>
+          <Typography  textAlign={'center'} style={{margin: '0 auto'}} className={classes.title}>
             Agora é hora de fazer a sua inscrição
           </Typography>
 
-          <Typography component={'p'} textAlign={'center'} style={{marginBottom: '40px 0'}}>
+          <Typography textAlign={'center'} style={{marginBottom: '80px 0'}}>
             Informe seu melhor e-mail para te avisarmos sobre as aulas
           </Typography>
 
-          <Container maxWidth={'sm'}>
-            <form>
-              <FormControl>
+          <Box className={classes.formBox}>
+            <Formik
+              initialValues={formValues}
+              validationSchema={validationSchema}
+              onSubmit={handleFormSubmit}
+            >
+              {
+                ({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleSubmit,
+                }) => {
+                    return(
+                      <form onSubmit={handleSubmit}>
+                        <FormControl>
+                          <InputLabel color='secondary'>
+                            Nome
+                          </InputLabel>
 
-                <InputLabel>
-                  Nome
-                </InputLabel>
+                          <Input
+                            name='name'
+                            fullWidth
+                            value={values.name}
+                            onChange={handleChange}
+                            color='secondary'
+                          />
 
-                <Input
-                  name='name'
-                  variant=''
-                  fullWidth
-                  autoComplete
-                />
-              </FormControl>
+                          <FormHelperText error>
+                            {errors.name && touched.name ? errors.name : null}
+                          </FormHelperText>
+                        </FormControl>
+                        <FormControl style={{margin: '40px 0px'}}>
+                          <InputLabel>
+                            E-mail
+                          </InputLabel>
 
-              <FormControl style={{margin: '40px 0px'}}>
+                          <Input
+                            name='email'
+                            fullWidth
+                            value={values.email}
+                            onChange={handleChange}
+                            color='secondary'
+                          />
 
-                <InputLabel>
-                  E-mail
-                </InputLabel>
+                          <FormHelperText error>
+                            {errors.email && touched.email ? errors.email : null}
+                          </FormHelperText>
+                        </FormControl>
+                        <FormControl>
+                          <InputLabel>
+                            Celular
+                          </InputLabel>
 
-                <Input
-                  name='name'
-                  outlined
-                  fullWidth
-                  autoComplete
-                />
+                          <Input
+                            name='phone'
+                            fullWidth
+                            value={values.phone}
+                            onChange={handleChange}
+                            color='secondary'
+                          />
 
-              </FormControl>
-
-              <FormControl>
-
-                <InputLabel>
-                  Celular
-                </InputLabel>
-
-                <Input
-                  name='name'
-                  outlined
-                  fullWidth
-                  autoComplete
-                />
-
-              </FormControl>
-            </form>
-          </Container>
+                          <FormHelperText error>
+                            {errors.phone && touched.phone ? errors.phone : null}
+                          </FormHelperText>
+                        </FormControl>
+                        <Button variant='contained' size='large' color='secondary' style={{display: 'block', margin: '80px auto 0px'}} className={classes.button} type='submit'>
+                          Inscrever
+                        </Button>
+                      </form>
+                    )
+                  }
+              }
+            
+            </Formik>
+          </Box>            
         </Container>
       </Container>
 
