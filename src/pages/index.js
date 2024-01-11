@@ -32,7 +32,8 @@ const useStyles = makeStyles()((theme) => {
       width: '430px'
     },
     textWidth: {
-      width: '300px',
+      width: '430px',
+      lineHeight: '26px'
     },
     title: {
       width: '430px',
@@ -57,6 +58,11 @@ const useStyles = makeStyles()((theme) => {
       padding: '80px 0',
       width: '520px',
       margin: '0 auto'
+    },
+    pageAbout: {
+      backgroundImage: 'url(/images/bgAbout.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'left center'
     }
 
   }
@@ -213,7 +219,26 @@ const Home = () => {
           </Box>
         </Container>
       </Container>
+      
+      {
+        //Quarta página (sobre)
+      }
+      <Container maxWidth={`100vw`} className={`${classes.pageAbout} ${classes.containerPages}`}>
+        <Container maxWidth={'md'}>
+          <Typography color={'#1C92D2'} className={classes.subTitle}>
+            SOBRE
+          </Typography>
 
+          <Typography color={'#EBE5E5'} className={classes.title}>
+            HELANO MARIZ
+          </Typography>
+          
+          <Typography color={'#EBE5E5'} className={classes.textWidth}>
+            Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
+            Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
+          </Typography>
+        </Container>
+      </Container>
 
     </TemplateDefault>
   )
