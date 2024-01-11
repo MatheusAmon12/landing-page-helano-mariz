@@ -1,16 +1,16 @@
 import TemplateDefault from '@/templates/Default'
-import { Button, Container, Grid, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
 
 const useStyles = makeStyles()((theme) => {
   return{
-    containerPageOne: {
+    containerTop: {
       padding: '80px 0 197px',
       backgroundImage: 'url(/images/bgTop.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
     },
-    containerPageTwo: {
+    containerPages: {
       padding: '197px 0',
       backgroundColor: theme.palette.background.default
     },
@@ -50,6 +50,13 @@ const useStyles = makeStyles()((theme) => {
     },
     brainIcon: {
       width: '250px'
+    },
+    priceBox: {
+      borderRadius: '5px',
+      border: '2px solid black',
+      padding: '80px 0',
+      width: '520px',
+      margin: '0 auto'
     }
 
   }
@@ -60,7 +67,10 @@ const Home = () => {
 
   return (
     <TemplateDefault>
-      <Container maxWidth={`100vw`} className={classes.containerPageOne}>
+      {
+        //Topo
+      }
+      <Container maxWidth={`100vw`} className={classes.containerTop}>
         <Container maxWidth={'md'}>
           <img src='/images/logoHumanizar.png' />
           <Typography color={'secondary'} className={classes.promise}>
@@ -75,7 +85,10 @@ const Home = () => {
         </Container>
       </Container>
 
-      <Container maxWidth={`100vw`} className={classes.containerPageTwo}>
+      {
+        //Segunda página (módulos da imersão)
+      }
+      <Container maxWidth={`100vw`} className={classes.containerPages}>
         <Container maxWidth={'md'}>
           {
             //Grid do ícone Brain com todo conteúdo
@@ -161,6 +174,47 @@ const Home = () => {
           
         </Container>
       </Container>
+
+      {
+        //Terceira página (preços)
+      }
+      <Container maxWidth={`100vw`} className={classes.containerPages}>
+        <Container maxWidth='md'>
+          <Typography textAlign={'center'}  style={{margin: '0 auto 80px'}} className={classes.title}>
+            Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque
+          </Typography>
+
+          <Box className={classes.priceBox}>
+            <Typography textAlign={'center'}>
+              <Typography>
+                <s>de R$997,90</s>
+              </Typography>
+
+              <Typography style={{fontSize: '24px'}}>
+                por apenas
+              </Typography>
+
+              <Typography style={{fontSize: '32px', fontWeight: 'bold'}}>
+                12x de
+              </Typography>
+
+              <Typography style={{fontSize: '88px', fontWeight: 'bold'}}>
+                R$57,90
+              </Typography>
+
+              <Typography style={{fontSize: '24px'}}>
+                ou R$597,90 à vista
+              </Typography>
+            </Typography>
+
+            <Button variant='contained' size='large' color='secondary' style={{display: 'block', margin: '80px auto 0px'}} className={classes.button}>
+              Quero participar
+            </Button>
+          </Box>
+        </Container>
+      </Container>
+
+
     </TemplateDefault>
   )
 }
