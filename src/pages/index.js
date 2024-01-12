@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { FormControl } from '@mui/base'
 import { Box, Button, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
 
 import { Formik } from 'formik'
 
+import AlertDialogSlide from '@/components/Dialog'
 import TemplateDefault from '@/templates/Default'
 import { initialValues, validationSchema } from './formValues'
 
@@ -79,12 +81,15 @@ const useStyles = makeStyles()((theme) => {
 })
 
 const Home = () => {
+  const [openDialog, setOpenDialog] = useState(false)
+
   const { classes } = useStyles()
   const formValues = {
     ...initialValues
   }
   
   const handleFormSubmit = (values) => {
+    setOpenDialog(true)
     console.log('Deu certo aqui', values)
   }
 
@@ -351,6 +356,14 @@ const Home = () => {
           </Box>            
         </Container>
       </Container>
+
+      {
+        //Dialog box
+      }
+      <AlertDialogSlide 
+        open={openDialog}
+        onClose={() => setOpenDialog(false)}
+      />
 
     </TemplateDefault>
   )
