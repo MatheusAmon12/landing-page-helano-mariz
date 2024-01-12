@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { FormControl } from '@mui/base'
 import { Box, Button, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
@@ -30,7 +30,7 @@ const useStyles = makeStyles()((theme) => {
     },
     subPromise: {
       width: '430px',
-      fontSize: '24px',
+      fontSize: '20px',
       lineHeight: '34px'
     },
     button: {
@@ -87,10 +87,19 @@ const Home = () => {
   const formValues = {
     ...initialValues
   }
+  //definindo a referência inicial como null
+  const formRef = useRef(null)
   
   const handleFormSubmit = (values) => {
     setOpenDialog(true)
     console.log('Deu certo aqui', values)
+  }
+  //scroll para a referência definida
+  const goToForm = () => {
+    window.scrollTo({
+      top: formRef.current.offsetTop,
+      behavior: 'smooth'
+    })
   }
 
   return (
@@ -110,7 +119,13 @@ const Home = () => {
             Lorem ipsum dolor sit amet consectetur. Condimentum lectus commodo tincidunt nec faucibus aliquam. Dis sagittis ut facilisi duis ac id neque. Facilisis id ed.
           </Typography>
 
-          <Button variant='contained' size='large' color='secondary' className={classes.button}>
+          <Button 
+            variant='contained' 
+            size='large' 
+            color='secondary' 
+            className={classes.button}
+            onClick={goToForm}
+          >
             Quero participar
           </Button>
 
@@ -197,7 +212,13 @@ const Home = () => {
                 </Grid>
               </Grid>
 
-              <Button variant='contained' size='large' color='secondary' className={classes.button}>
+              <Button 
+                variant='contained' 
+                size='large' 
+                color='secondary' 
+                className={classes.button}
+                onClick={goToForm}
+              >
                 Quero participar
               </Button>
 
@@ -237,7 +258,14 @@ const Home = () => {
               ou R$597,90 à vista
             </Typography>
 
-            <Button variant='contained' size='large' color='secondary' style={{display: 'block', margin: '80px auto 0px'}} className={classes.button}>
+            <Button 
+              variant='contained' 
+              size='large' 
+              color='secondary' 
+              style={{display: 'block', margin: '80px auto 0px'}} 
+              className={classes.button}
+              onClick={goToForm}
+            >
               Quero participar
             </Button>
           </Box>
@@ -268,7 +296,7 @@ const Home = () => {
         //Quinta página (formulário)
       }
       <Container maxWidth={`100vw`} className={classes.containerPages}>
-        <Container maxWidth={'md'}>
+        <Container maxWidth={'md'} ref={formRef}>
           <Typography  textAlign={'center'} style={{margin: '0 auto'}} className={classes.title}>
             Agora é hora de fazer a sua inscrição
           </Typography>

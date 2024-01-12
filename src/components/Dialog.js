@@ -88,7 +88,7 @@ const AlertDialogSlide = ({ open, onClose}) => {
                     color='secondary' 
                     style={{display: 'block', margin: '20px auto 0'}} 
                     className={classes.button} 
-                    onClick={() => handleRedirect('/')}
+                    onClick={() => handleRedirect('https://chat.whatsapp.com/H5QegAtFQssGMgeh1eCS7R')}
                 >
                           participar do grupo
                 </Button>
