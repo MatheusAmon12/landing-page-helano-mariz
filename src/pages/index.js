@@ -9,6 +9,8 @@ import AlertDialogSlide from '@/components/Dialog'
 import TemplateDefault from '@/templates/Default'
 import { initialValues, validationSchema } from './formValues'
 
+import Pixel from '@/components/Pixel'
+
 const useStyles = makeStyles()((theme) => {
   return{
     containerTop: {
@@ -104,6 +106,9 @@ const Home = () => {
 
   return (
     <TemplateDefault>
+      <div>
+        <Pixel name='FACEBOOK_PIXEL_1' />
+      </div>
       {
         //Topo
       }

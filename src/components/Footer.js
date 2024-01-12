@@ -1,4 +1,4 @@
-import { Container, Grid, IconButton, Typography, colors } from '@mui/material'
+import { Container, Grid, IconButton, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
 import { useRouter } from 'next/router'
 
@@ -6,6 +6,7 @@ import { WhatsApp } from '@mui/icons-material'
 import { Instagram } from '@mui/icons-material'
 import { YouTube } from '@mui/icons-material'
 import { MailOutlineOutlined } from '@mui/icons-material'
+import Link from 'next/link'
 
 const useStyles = makeStyles()((theme) => {
     return{
@@ -64,7 +65,19 @@ const Footer = () => {
             </Grid>
 
             <Typography color={'white'} textAlign={'center'}>
-                Informações | Suporte  
+                <Link 
+                    passHref 
+                    href={''} style={{paddingRight: '5px', textDecoration: 'none', color: 'white'}}
+                >
+                    Informações   
+                </Link>
+                | 
+                <Link 
+                    passHref href={''} 
+                    style={{paddingLeft: '5px', textDecoration: 'none', color: 'white'}}
+                >
+                    Suporte
+                </Link>
             </Typography>
         </Container>
     )
