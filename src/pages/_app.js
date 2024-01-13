@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title> Helano Mariz </title>
-        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/images/logoHumanizar.png" type="image/png" />
       </Head>
       <CssBaseline />
       <CacheProvider value={cache}>
