@@ -34,14 +34,14 @@ const Footer = () => {
         <Container maxWidth={`100vw`} disableGutters className={classes.footer}>
             <Grid container className={classes.container}>
                 <Grid item>
-                    <IconButton>
-                        <WhatsApp color='tertiary' onClick={() => handleRedirect('https://wa.me//5538?text=Olá,%20pode%20me%20ajudar?%20')}/>
+                    <IconButton onClick={() => handleRedirect('https://wa.me//5538?text=Olá,%20pode%20me%20ajudar?%20')}>
+                        <WhatsApp color='tertiary' />
                     </IconButton>
                 </Grid>
 
                 <Grid item>
-                    <IconButton>
-                        <Instagram color='tertiary' onClick={() => handleRedirect('https://www.instagram.com/helanomariz/')}/>
+                    <IconButton  onClick={() => handleRedirect('https://www.instagram.com/helanomariz/')}>
+                        <Instagram color='tertiary'/>
                     </IconButton>
                 </Grid>
 
