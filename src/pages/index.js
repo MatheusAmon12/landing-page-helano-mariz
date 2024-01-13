@@ -33,7 +33,7 @@ const useStyles = makeStyles()((theme) => {
     },
     subPromise: {
       width: '430px',
-      fontSize: '20px',
+      fontSize: '24px',
       lineHeight: '34px'
     },
     button: {
@@ -48,8 +48,9 @@ const useStyles = makeStyles()((theme) => {
     title: {
       width: '430px',
       fontSize: '24px',
+      lineHeight: '34px',
       fontWeight: 'bold',
-      marginBottom: '24px',
+      marginBottom: '40px',
     },
     subTitle: {
       fontSize: '20px',
@@ -121,12 +122,12 @@ const Home = () => {
         <Container maxWidth={'md'}>
           <img src='/images/logoHumanizar.png' />
 
-          <Typography color={'secondary'} className={classes.promise}>
-            Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque quisque
+          <Typography color={'#2F54BF'} className={classes.promise}>
+            Valorizando a essência
           </Typography>
 
           <Typography className={classes.subPromise}>
-            Lorem ipsum dolor sit amet consectetur. Condimentum lectus commodo tincidunt nec faucibus aliquam. Dis sagittis ut facilisi duis ac id neque. Facilisis id ed.
+            Evite a autocondenação, busque a transformação. Em um mundo onde constantemente nos comparamos e nos autodepreciamos, aprenda como olhar para dentro de si e apreciar a riqueza que o Senhor lhe entregou
           </Typography>
 
           <Button 
@@ -157,13 +158,13 @@ const Home = () => {
 
             <Grid item md={6} sm={12}>
               <Typography  className={ classes.title }>
-                Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque
+                Irei te ajudar a se resolver com o seu passado e prosseguir para um futuro lindo
               </Typography>
 
               {
                 //Grid do conjunto de ícones e textos
               }
-              <Grid container>
+              <Grid container rowSpacing={'32'}>
                 <Grid item>
                   {
                     //Grid do ícone e seu respectivo texto
@@ -175,11 +176,11 @@ const Home = () => {
                     
                     <Grid item md={6} sm={12}>
                       <Typography  className={classes.subTitle}>
-                        Lorem ipsum
+                        Conhece-te
                       </Typography>
 
                       <Typography className={classes.textWidth}>
-                        Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
+                        No primeiro módulo dessa imersão, iremos trabalhar o poder que há dentro de cada um de nós através do amor de Deus. Aqui iremos entender e ressignificar a sua história juntos.
                       </Typography>
                     </Grid>
                   </Grid>
@@ -193,11 +194,11 @@ const Home = () => {
                     
                     <Grid item md={6} sm={12}>
                       <Typography  className={classes.subTitle}>
-                        Lorem ipsum
+                        Aceita-te
                       </Typography>
 
                       <Typography className={classes.textWidth}>
-                        Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
+                        Nesse segundo módulo vamos identificar o que tem te impedido de se relacionar melhor com as pessoas a sua volta e o que tem te travado em realizar seu sonhos.
                       </Typography>
                     </Grid>
                   </Grid> 
@@ -211,11 +212,11 @@ const Home = () => {
                     
                     <Grid item md={6} sm={12}>
                       <Typography  className={classes.subTitle}>
-                        Lorem ipsum
+                        Supera-te
                       </Typography>
 
                       <Typography className={classes.textWidth}>
-                        Lorem ipsum dolor sit amet consectetur. Integer suspendisse libero aenean eu varius tortor vivamus. Risus sem egestas varius et nunc posuere.
+                        Por fim iremos, após identificar que áreas da sua vida precisam ser mudadas, vamos elaborar um plano de ação para que haja mudança de fato em sua vida. E assim você estará pronta para um novo começo.
                       </Typography>
                     </Grid>
                   </Grid>
@@ -244,7 +245,7 @@ const Home = () => {
       <Container maxWidth={`100vw`} className={classes.containerPages}>
         <Container maxWidth={'md'}>
           <Typography textAlign={'center'}  style={{margin: '0 auto 80px'}} className={classes.title}>
-            Lorem ipsum dolor sit amet consectetur ipsum eget scelerisque
+            Tenha uma mudança de pensamento e viva o seu propósito com Deus
           </Typography>
 
           <Box className={classes.priceBox}>
@@ -296,8 +297,7 @@ const Home = () => {
           </Typography>
           
           <Typography color={'#EBE5E5'} className={classes.textWidth}>
-            Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
-            Lorem ipsum dolor sit amet consectetur. Diam eget in sit elementum urna vitae viverra elit iaculis. Massa nunc laoreet dui fusce quis et in. Habitant porta libero ornare pellentesque non turpis eget viverra at. Integer a odio adipiscing faucibus id tincidunt eros vehicula.
+            Na minha caminhada ministerial, mesmo sem compreender na época, no início dos anos 2002, quando minha esposa Renata Mariz enfrentou uma intensa depressão, percebi a importância do cuidado humano. <br/><br/>Desde então, passei a me dedicar ainda mais ao próximo, sendo reconhecido por muitos como um verdadeiro e fiel conselheiro. Ao longo dessa jornada, novos projetos e desafios foram sugeridos, tanto na área empreendedora quanto no cuidado humano. <br/><br/>Então me especializei em diversas áreas, sendo hoje: Analista comportamental, Especialista em sexologia e psicologia e Profissional em Coach. Tudo isso com o intuito de ajudar diferentes pessoas, em diferentes áreas de suas vidas.
           </Typography>
         </Container>
       </Container>
@@ -312,7 +312,7 @@ const Home = () => {
           </Typography>
 
           <Typography textAlign={'center'} style={{marginBottom: '80px 0'}}>
-            Informe seu melhor e-mail para te avisarmos sobre as aulas
+            Informe seu melhor e-mail e WhatsApp para te avisarmos sobre as aulas
           </Typography>
 
           <Box className={classes.formBox}>
