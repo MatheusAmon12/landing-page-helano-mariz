@@ -115,23 +115,6 @@ const Home = () => {
       </div>
 
       {
-        //Google Analytics
-      }
-      <div>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-345210624"/>
-        <Script>
-          {
-            `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-    
-              gtag('config', 'AW-345210624');
-            `
-          }
-        </Script>
-      </div>
-      {
         //Topo
       }
       <Container maxWidth={`100vw`} className={classes.containerTop}>
