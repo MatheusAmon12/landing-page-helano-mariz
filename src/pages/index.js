@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { FormControl } from '@mui/base'
 import { Box, Button, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
+import Script from 'next/script'
 
 import { Formik } from 'formik'
 
@@ -106,8 +107,29 @@ const Home = () => {
 
   return (
     <TemplateDefault>
+      {
+        //Pixel do Facebook
+      }
       <div>
         <Pixel name='FACEBOOK_PIXEL_1' />
+      </div>
+
+      {
+        //Google Analytics
+      }
+      <div>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-345210624"/>
+        <Script>
+          {
+            `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+    
+              gtag('config', 'AW-345210624');
+            `
+          }
+        </Script>
       </div>
       {
         //Topo
