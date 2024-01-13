@@ -33,6 +33,8 @@ const useStyles = makeStyles()((theme) => {
         dialogContentText: {
             fontSize: '32px',
             fontWeight: 'bolder',
+            textAlign: 'center',
+            color: 'black',
             lineHeight: '48px',
             padding: '0 160px'
         },
@@ -71,14 +73,8 @@ const AlertDialogSlide = ({ open, onClose}) => {
         <Box className={classes.dialogBox}>
             <DialogTitle className={classes.dialogTitle}>Obrigado!</DialogTitle>
             <DialogContent>
-                <DialogContentText id="alert-dialog-slide-description">
-                    <Typography textAlign={'center'} color={'black'} className={classes.dialogContentText}>
-                        Agora falta pouco para finalizar sua inscrição...
-                    </Typography>
-                    
-                    <Typography textAlign={'center'} color={'secondary'} className={classes.dialogContentTextSub}>
-                        Clique no botão abaixo e faça parte do grupo do WhatsApp
-                    </Typography>
+                <DialogContentText id="alert-dialog-slide-description" className={classes.dialogContentText}>
+                    Agora falta pouco para finalizar sua inscrição. <br/>Clique no botão abaixo para fazer parte do grupo exclusivo do WhatsApp.
                 </DialogContentText>
             </DialogContent>
             <DialogActions className={classes.dialogActions}>
