@@ -15,8 +15,6 @@ const validationSchema = yup.object().shape({
         .email('Digite um email válido!')
         .required('Campo obrigatório!'),
     phone: yup.number()
-        .positive('Digite apenas números!')
-        .integer('Digite apenas números!')
         .required('Campo obrigatório!'),
 })
 

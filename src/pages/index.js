@@ -2,7 +2,6 @@ import { useState, useRef } from 'react'
 import { FormControl } from '@mui/base'
 import { Box, Button, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
-import Script from 'next/script'
 
 import { Formik } from 'formik'
 
@@ -11,7 +10,6 @@ import TemplateDefault from '@/templates/Default'
 import { initialValues, validationSchema } from './formValues'
 
 import Pixel from '@/components/Pixel'
-import theme from '@/theme'
 
 const useStyles = makeStyles()((theme) => {
   return{
@@ -130,11 +128,30 @@ const Home = () => {
   }
   //definindo a referência inicial como null
   const formRef = useRef(null)
-  
-  const handleFormSubmit = (values) => {
+
+  const handleFormSubmit = async (values) => {
+    console.log('Esses são os valores recebidos', values)
+
+    const res = await fetch('/api/subscribeUser', {
+      body: JSON.stringify({
+        email: values.email,
+        name: values.name,
+        phone: values.phone,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    });
+
+    const { error } = await res.json()
+    console.log(error)
+
     setOpenDialog(true)
-    console.log('Deu certo aqui', values)
+
+    console.log('Aqui funcionou ok!')
   }
+
   //scroll para a referência definida
   const goToForm = () => {
     window.scrollTo({
@@ -288,11 +305,6 @@ const Home = () => {
           <Box className={classes.priceBox}>
             <Typography 
               textAlign={'center'} 
-              style={{
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '10px',
-                }
-              }}
             >
               <s>de R$997,90</s>
             </Typography>
@@ -301,9 +313,6 @@ const Home = () => {
               textAlign={'center'} 
               style={{
                 fontSize: '24px',
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '16px',
-                }
               }}
             >
               por apenas
@@ -314,9 +323,6 @@ const Home = () => {
               style={{
                 fontSize: '32px', 
                 fontWeight: 'bold',
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '20px',
-                }
               }}
             >
               12x de
@@ -327,9 +333,6 @@ const Home = () => {
               style={{
                 fontSize: '88px', 
                 fontWeight: 'bold',
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '64px',
-                }
               }}
             >
               R$57,90
@@ -339,9 +342,6 @@ const Home = () => {
               textAlign={'center'} 
               style={{
                 fontSize: '24px',
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '16px',
-                }
               }}
             >
               ou R$597,90 à vista
