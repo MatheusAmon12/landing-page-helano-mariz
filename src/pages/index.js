@@ -11,6 +11,7 @@ import TemplateDefault from '@/templates/Default'
 import { initialValues, validationSchema } from './formValues'
 
 import Pixel from '@/components/Pixel'
+import theme from '@/theme'
 
 const useStyles = makeStyles()((theme) => {
   return{
@@ -18,7 +19,12 @@ const useStyles = makeStyles()((theme) => {
       padding: '80px 0 197px',
       backgroundImage: 'url(/images/bgTop.png)',
       backgroundSize: 'cover',
-      backgroundPosition: 'center center'
+      backgroundPosition: 'center center',
+      [theme.breakpoints.down('sm')]: {
+        backgroundImage: 'url(/images/bgTopSm.png)',
+        backgroundPosition: 'center center',
+        paddingBottom: '400px'
+      }
     },
     containerPages: {
       padding: '197px 0',
@@ -29,21 +35,37 @@ const useStyles = makeStyles()((theme) => {
       width: '430px',
       fontSize: '38px',
       lineHeight: '48px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      [theme.breakpoints.down('sm')]: { 
+        width: '350px',
+        fontSize: '30px',
+        lineHeight: '40px',
+      }
     },
     subPromise: {
       width: '430px',
       fontSize: '24px',
-      lineHeight: '34px'
+      lineHeight: '34px',
+      [theme.breakpoints.down('sm')]: {
+        width: '350px',
+        fontSize: '18px',
+        lineHeight: '28px'
+      }
     },
     button: {
       marginTop: '80px',
       height: '60px',
-      width: '430px'
+      width: '430px',
+      [theme.breakpoints.down('sm')]: {
+        width: '320px',
+      }
     },
     textWidth: {
       width: '430px',
-      lineHeight: '26px'
+      lineHeight: '26px',
+      [theme.breakpoints.down('sm')]: {
+        width: '350px'
+      }
     },
     title: {
       width: '430px',
@@ -51,6 +73,10 @@ const useStyles = makeStyles()((theme) => {
       lineHeight: '34px',
       fontWeight: 'bold',
       marginBottom: '40px',
+      [theme.breakpoints.down('sm')]: {
+        width: '350px',
+        fontSize: '22px'
+      }
     },
     subTitle: {
       fontSize: '20px',
@@ -59,6 +85,9 @@ const useStyles = makeStyles()((theme) => {
     grid: {
       display: 'flex',
       alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+      }
     },
     brainIcon: {
       width: '250px'
@@ -68,12 +97,20 @@ const useStyles = makeStyles()((theme) => {
       border: '2px solid black',
       padding: '80px 0',
       width: '520px',
-      margin: '0 auto'
+      margin: '0 auto',
+      [theme.breakpoints.down('sm')]: {
+        width: '350px',
+      }
     },
     pageAbout: {
       backgroundImage: 'url(/images/bgAbout.png)',
       backgroundSize: 'cover',
-      backgroundPosition: 'left center'
+      backgroundPosition: 'left center',
+      [theme.breakpoints.down('sm')]: {
+        backgroundImage: 'url(/images/bgAboutSm.png)',
+        backgroundPosition: 'center center',
+        paddingBottom: '600px'
+      }
     },
     formBox: {
       maxWidth: '520px',
@@ -151,7 +188,7 @@ const Home = () => {
           {
             //Grid do ícone Brain com todo conteúdo
           }
-          <Grid container className={classes.grid}>
+          <Grid container rowSpacing={'160'} className={classes.grid}>
             <Grid item md={6} sm={12}>
               <img src='/images/brainIcon.png' className={classes.brainIcon}/>
             </Grid>
@@ -249,23 +286,64 @@ const Home = () => {
           </Typography>
 
           <Box className={classes.priceBox}>
-            <Typography textAlign={'center'}>
+            <Typography 
+              textAlign={'center'} 
+              style={{
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '10px',
+                }
+              }}
+            >
               <s>de R$997,90</s>
             </Typography>
 
-            <Typography textAlign={'center'} style={{fontSize: '24px'}}>
+            <Typography 
+              textAlign={'center'} 
+              style={{
+                fontSize: '24px',
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '16px',
+                }
+              }}
+            >
               por apenas
             </Typography>
 
-            <Typography textAlign={'center'} style={{fontSize: '32px', fontWeight: 'bold'}}>
+            <Typography 
+              textAlign={'center'} 
+              style={{
+                fontSize: '32px', 
+                fontWeight: 'bold',
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '20px',
+                }
+              }}
+            >
               12x de
             </Typography>
 
-            <Typography textAlign={'center'} style={{fontSize: '88px', fontWeight: 'bold'}}>
+            <Typography 
+              textAlign={'center'} 
+              style={{
+                fontSize: '88px', 
+                fontWeight: 'bold',
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '64px',
+                }
+              }}
+            >
               R$57,90
             </Typography>
 
-            <Typography textAlign={'center'} style={{fontSize: '24px'}}>
+            <Typography 
+              textAlign={'center'} 
+              style={{
+                fontSize: '24px',
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '16px',
+                }
+              }}
+            >
               ou R$597,90 à vista
             </Typography>
 
