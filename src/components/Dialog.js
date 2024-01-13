@@ -36,7 +36,12 @@ const useStyles = makeStyles()((theme) => {
             textAlign: 'center',
             color: 'black',
             lineHeight: '48px',
-            padding: '0 160px'
+            padding: '0 160px',
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '24px',
+                lineHeight: '34px',
+                padding: '0 20px'
+            }
         },
         dialogContentTextSub: {
             fontWeight: 'bold'
