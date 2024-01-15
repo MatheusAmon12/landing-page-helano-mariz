@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { FormControl } from '@mui/base'
-import { Box, Button, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
+import { Box, Button, CircularProgress, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
 
 import { Formik } from 'formik'
@@ -404,6 +404,7 @@ const Home = () => {
                   values,
                   errors,
                   touched,
+                  isSubmitting,
                   handleChange,
                   handleSubmit,
                 }) => {
@@ -469,7 +470,11 @@ const Home = () => {
                           </FormHelperText>
                         </FormControl>
                         <Button variant='contained' size='large' color='secondary' style={{display: 'block', margin: '80px auto 0px'}} className={classes.button} type='submit'>
-                          Inscrever
+                          {
+                            isSubmitting ? 
+                              <CircularProgress color={'secondary'} /> :
+                              'inscrever'
+                          }
                         </Button>
                       </form>
                     )
