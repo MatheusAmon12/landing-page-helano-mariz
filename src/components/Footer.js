@@ -59,7 +59,7 @@ const Footer = () => {
 
                 <Grid item>
                     <Typography color={'white'}>
-                        seuemail@email.com
+                        suporte@imersaohelanomariz.com
                     </Typography>
                 </Grid>
             </Grid>
@@ -67,14 +67,16 @@ const Footer = () => {
             <Typography color={'white'} textAlign={'center'}>
                 <Link 
                     passHref 
-                    href={''} style={{paddingRight: '5px', textDecoration: 'none', color: 'white'}}
+                    href={'mailto:suporte@imersaohelanomariz.com?subjet=Quero mais informações'} style={{paddingRight: '5px', textDecoration: 'none', color: 'white'}}
+                    target='_blank'
                 >
                     Informações   
                 </Link>
                 | 
                 <Link 
-                    passHref href={''} 
+                    passHref href={'mailto:suporte@imersaohelanomariz.com'} 
                     style={{paddingLeft: '5px', textDecoration: 'none', color: 'white'}}
+                    target='_blank'
                 >
                     Suporte
                 </Link>
