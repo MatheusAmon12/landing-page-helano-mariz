@@ -43,7 +43,9 @@ const useStyles = makeStyles()((theme) => {
     subPromise: {
       width: '430px',
       fontSize: '24px',
+      fontWeight: 'bold',
       lineHeight: '34px',
+      color: '#1a1a1a',
       [theme.breakpoints.down('sm')]: {
         width: '350px',
         fontSize: '18px',
@@ -176,7 +178,7 @@ const Home = () => {
         <Container maxWidth={'md'}>
           <img src='/images/logoHumanizar.png' />
 
-          <Typography color={'#2F54BF'} className={classes.promise}>
+          <Typography color={'secondary'} className={classes.promise}>
             Valorizando a essência
           </Typography>
 
@@ -212,7 +214,7 @@ const Home = () => {
 
             <Grid item md={6} sm={12}>
               <Typography  className={ classes.title }>
-                Irei te ajudar a se resolver com o seu passado e prosseguir para um futuro lindo
+                Irei te ajudar a superar os traumas e encontrar equilíbrio em seus relacionamentos
               </Typography>
 
               {
@@ -234,7 +236,7 @@ const Home = () => {
                       </Typography>
 
                       <Typography className={classes.textWidth}>
-                        No primeiro módulo dessa imersão, iremos trabalhar o poder que há dentro de cada um de nós através do amor de Deus. Aqui iremos entender e ressignificar a sua história juntos.
+                        No primeiro módulo dessa imersão, você compreenderá o poder que está dentro de cada um de nós, através do amor de Deus. Aqui você irá entender e ressignificar sua história.
                       </Typography>
                     </Grid>
                   </Grid>
@@ -270,7 +272,7 @@ const Home = () => {
                       </Typography>
 
                       <Typography className={classes.textWidth}>
-                        Por fim iremos, após identificar que áreas da sua vida precisam ser mudadas, vamos elaborar um plano de ação para que haja mudança de fato em sua vida. E assim você estará pronta para um novo começo.
+                        Por fim,  após identificar as áreas da sua vida que precisam ser mudadas,  vamos elaborar um plano de ação para que haja mudança de fato em sua vida . E assim você estará pronta para uma vida de equilíbrio e superação.
                       </Typography>
                     </Grid>
                   </Grid>
