@@ -130,8 +130,8 @@ const Home = () => {
   const formRef = useRef(null)
 
   const handleFormSubmit = async (values) => {
-    console.log('Esses são os valores recebidos', values)
 
+    //requisição para a api
     const res = await fetch('/api/subscribeUser', {
       body: JSON.stringify({
         email: values.email,
@@ -431,6 +431,10 @@ const Home = () => {
                             E-mail
                           </InputLabel>
 
+                          <FormHelperText>
+                            example@email.com
+                          </FormHelperText>
+
                           <Input
                             name='email'
                             fullWidth
@@ -447,6 +451,10 @@ const Home = () => {
                           <InputLabel>
                             Celular
                           </InputLabel>
+
+                          <FormHelperText>
+                            Digite apenas números, incluindo o DDD
+                          </FormHelperText>
 
                           <Input
                             name='phone'
