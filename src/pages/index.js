@@ -7,7 +7,7 @@ import { Formik } from 'formik'
 
 import AlertDialogSlide from '@/components/Dialog'
 import TemplateDefault from '@/templates/Default'
-import { initialValues, validationSchema } from './formValues'
+import { initialValues, validationSchema } from '../utils/formValues'
 
 import Pixel from '@/components/Pixel'
 
