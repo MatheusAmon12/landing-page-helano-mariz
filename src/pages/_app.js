@@ -14,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
       <Head>
         <title> Helano Mariz </title>
         <link rel="shortcut icon" href="/images/logoHumanizar.png" type="image/png" />
+        <meta name="facebook-domain-verification" content="1f6fbm5ibnhh1ifko2pjif2pqdsipe" />
       </Head>
       <CssBaseline />
       <CacheProvider value={cache}>
