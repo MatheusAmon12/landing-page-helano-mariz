@@ -26,8 +26,8 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
-          <PixelFacebook />
           <Analytics />
+          <PixelFacebook />
         </Head>
         <body>
           <Main />
