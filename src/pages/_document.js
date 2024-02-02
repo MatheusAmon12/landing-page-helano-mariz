@@ -24,6 +24,10 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head />
         <body>
+          <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5FK3GFP"
+            height="0" width="0" style={{display:"none", visibility:"hidden"}}></iframe>
+          </noscript>
           <Main />
           <NextScript />
         </body>
