@@ -5,6 +5,8 @@ import { CacheProvider } from '@emotion/react'
 
 import createEmotionCache from '../../createEmotionCache'
 import theme from '@/theme'
+import Analytics from '@/components/Analytics/gtag'
+import PixelFacebook from '@/components/Pixel/facebook/pixel-1'
  
 export default function MyApp({ Component, pageProps }) {
   const cache = createEmotionCache()
@@ -15,6 +17,8 @@ export default function MyApp({ Component, pageProps }) {
         <title> Helano Mariz </title>
         <link rel="shortcut icon" href="/images/logoHumanizar.png" type="image/png" />
         <meta name="facebook-domain-verification" content="1f6fbm5ibnhh1ifko2pjif2pqdsipe" />
+        <Analytics />
+        <PixelFacebook />
       </Head>
       <CssBaseline />
       <CacheProvider value={cache}>

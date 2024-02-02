@@ -1,7 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-
-import Analytics from '@/components/Analytics/gtag'
-import PixelFacebook from '@/components/Pixel/facebook/pixel-1'
  
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -25,11 +22,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-br">
-        <Head>
-          <Analytics />
-          <meta name="facebook-domain-verification" content="1f6fbm5ibnhh1ifko2pjif2pqdsipe" />
-          <PixelFacebook />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
