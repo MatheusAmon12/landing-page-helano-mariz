@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import Analytics from '@/components/Analytics/gtag'
+import PixelFacebook from '@/components/Pixel/facebook/pixel-1'
  
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -24,11 +25,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-br">
-        <Head />
+        <Head>
+          <PixelFacebook />
+          <Analytics />
+        </Head>
         <body>
           <Main />
           <NextScript />
-          <Analytics />
         </body>
       </Html>
     )

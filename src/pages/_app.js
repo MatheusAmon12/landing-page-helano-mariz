@@ -5,7 +5,6 @@ import { CacheProvider } from '@emotion/react'
 
 import createEmotionCache from '../../createEmotionCache'
 import theme from '@/theme'
-import Analytics from '@/components/Analytics/gtag'
  
 export default function MyApp({ Component, pageProps }) {
   const cache = createEmotionCache()
@@ -20,7 +19,6 @@ export default function MyApp({ Component, pageProps }) {
       <CssBaseline />
       <CacheProvider value={cache}>
           <ThemeProvider theme={theme}>
-              <Analytics />
               <Component {...pageProps} />
           </ThemeProvider>
       </CacheProvider>

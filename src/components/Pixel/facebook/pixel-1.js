@@ -13,8 +13,13 @@ export default () => {
             fbq('track', 'PageView');
         `}} />
 
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1043040600238855&ev=PageView&noscript=1"
-        /></noscript>
+        <noscript>
+            <img 
+                height="1" 
+                width="1" 
+                style={{display: 'none'}}
+                src="https://www.facebook.com/tr?id=1043040600238855&ev=PageView&noscript=1"
+            />
+        </noscript>
     </>
 }
