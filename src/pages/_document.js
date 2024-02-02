@@ -27,6 +27,7 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <Analytics />
+          <meta name="facebook-domain-verification" content="1f6fbm5ibnhh1ifko2pjif2pqdsipe" />
           <PixelFacebook />
         </Head>
         <body>
