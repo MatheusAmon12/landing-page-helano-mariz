@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
+import { useRouter } from 'next/router'
 import { FormControl } from '@mui/base'
 import { Box, Button, CircularProgress, Container, FormHelperText, Grid, Input, InputLabel, Typography } from '@mui/material'
 import { makeStyles } from 'tss-react/mui'
 
 import { Formik } from 'formik'
 
-import AlertDialogSlide from '@/components/Dialog'
 import TemplateDefault from '@/templates/Default'
 import { initialValues, validationSchema } from '../utils/formValues'
 
@@ -120,8 +120,7 @@ const useStyles = makeStyles()((theme) => {
 })
 
 const Home = () => {
-  const [openDialog, setOpenDialog] = useState(false)
-
+  const router = useRouter()
   const { classes } = useStyles()
   const formValues = {
     ...initialValues
@@ -132,6 +131,7 @@ const Home = () => {
   const handleFormSubmit = async (values) => {
 
     //requisição para a api
+
     const res = await fetch('/api/subscribeUser', {
       body: JSON.stringify({
         email: values.email,
@@ -145,11 +145,11 @@ const Home = () => {
     });
 
     const { error } = await res.json()
-    console.log(error)
 
-    setOpenDialog(true)
-
-    console.log('Aqui funcionou ok!')
+    router.push({
+      pathname: '/thank/thankYouPage',
+      query: {name: values.name}
+    })
   }
 
   //scroll para a referência definida
@@ -478,15 +478,6 @@ const Home = () => {
           </Box>            
         </Container>
       </Container>
-
-      {
-        //Dialog box
-      }
-      <AlertDialogSlide 
-        open={openDialog}
-        onClose={() => setOpenDialog(false)}
-      />
-
     </TemplateDefault>
   )
 }

@@ -12,6 +12,9 @@ const theme = createTheme({
         tertiary: {
             main: "#EBE5E5",
         },
+        quaternary: {
+            main: "#75DBCD"
+        },
         background: {
             default: '#EBE5E5'
         }
