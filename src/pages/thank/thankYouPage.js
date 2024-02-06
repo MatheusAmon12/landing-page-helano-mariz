@@ -10,10 +10,11 @@ const useStyles = makeStyles()((theme) => {
         backgroundImage: 'url(/images/thankYouPageBG.jpg)',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
-        backgroundPosition: 'center center'
+        backgroundPosition: 'center center',
       },
       box: {
-        padding: '80px 0 180px'
+        padding: '80px 0 180px',
+        height: '900px',
       },
       title: {
         fontSize: '48px',
@@ -33,6 +34,10 @@ const useStyles = makeStyles()((theme) => {
         marginBottom: '80px',
         width: '430px',
       },
+      button: {
+        height: '60px',
+        width: '330px',
+      }
     }
   })
 
@@ -55,7 +60,13 @@ const ThankYouPage = () => {
                     <Typography className={classes.text} color={'#FFF'}>
                         Agora falta pouco para finalizar sua inscrição. Clique no botão abaixo para fazer parte do grupo exclusivo do WhatsApp.
                     </Typography>
-                    <Button variant='contained' size='large' color={'quaternary'} style={{gap: '10px'}}>
+                    <Button 
+                      variant='contained' 
+                      size='large' 
+                      color={'quaternary'} 
+                      style={{gap: '10px'}}
+                      className={classes.button}
+                    >
                         <img src='/images/whatsAppIcon.png' />
                         <Typography style={{fontWeight: 'bolder'}} color={'#FFF'}> Participar do grupo</Typography>
                     </Button>
