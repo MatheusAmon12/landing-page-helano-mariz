@@ -11,28 +11,46 @@ const useStyles = makeStyles()((theme) => {
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
+        [theme.breakpoints.down('sm')]: {
+          backgroundImage: 'url(/images/thankyouPageBGSm.jpg)',
+        }
       },
       box: {
         padding: '80px 0 180px',
         height: '900px',
+        minHeight: '800px'
       },
       title: {
         fontSize: '48px',
         fontWeight: 'bold',
         marginBottom: '16px',
         width: '430px',
+        [theme.breakpoints.down('sm')]: {
+          width: '320px',
+        }
       },
       name: {
         fontSize: '24px',
+        lineHeight: '34px',
         fontWeight: 'bold',
         marginBottom: '40px',
         width: '430px',
-        color: theme.palette.quaternary.main
+        color: theme.palette.quaternary.main,
+        [theme.breakpoints.down('sm')]: {
+          width: '320px',
+          fontSize: '16px',
+          lineHeight: '26px',
+        }
       },
       text: {
         fontSize: '24px',
         marginBottom: '80px',
         width: '430px',
+        [theme.breakpoints.down('sm')]: {
+          width: '320px',
+          fontsize: '16px',
+          lineHeight: '26px',
+        }
       },
       button: {
         height: '60px',
