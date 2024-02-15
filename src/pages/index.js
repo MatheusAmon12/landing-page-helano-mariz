@@ -23,10 +23,6 @@ const useStyles = makeStyles()((theme) => {
         paddingBottom: '400px'
       }
     },
-    containerPages: {
-      padding: '197px 0',
-      backgroundColor: theme.palette.background.default
-    },
     promise: {
       margin: '40px 0 8px',
       width: '430px',
@@ -76,12 +72,30 @@ const useStyles = makeStyles()((theme) => {
       backgroundSize: 'cover',
       backgroundAttachment: 'cover'
     },
+    pageAbout: {
+      backgroundImage: 'url(/images/bgAbout.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'left center',
+      [theme.breakpoints.down('sm')]: {
+        backgroundImage: 'url(/images/bgAboutSm.png)',
+        backgroundPosition: 'center center',
+        paddingBottom: '600px'
+      }
+    },
+    section_6: {
+      backgroundColor: theme.palette.background.default,
+    },
     orderedList: {
       display: 'flex',
       flexDirection: 'column',
       gap: '16px',
       marginBottom: '24px',
       color: '#EBE5E5',
+    },
+    formBox: {
+      maxWidth: '520px',
+      minWidth: '350px',
+      margin: '80px auto 0'
     },
     box: {
       background: 'rgb(5,117,230)',
@@ -99,31 +113,7 @@ const useStyles = makeStyles()((theme) => {
         width: '350px'
       }
     },
-    margin_subtitle: {
-      marginBottom: '24px'
-    },
-    textWidth: {
-      width: '430px',
-      lineHeight: '26px',
-      [theme.breakpoints.down('sm')]: {
-        width: '350px'
-      }
-    },
-    title: {
-      width: '430px',
-      fontSize: '24px',
-      lineHeight: '34px',
-      fontWeight: 'bold',
-      marginBottom: '40px',
-      [theme.breakpoints.down('sm')]: {
-        width: '350px',
-        fontSize: '22px'
-      }
-    },
-    subTitle: {
-      fontSize: '20px',
-      fontWeight: 'bold',
-    },
+    /* 
     grid: {
       display: 'flex',
       alignItems: 'center',
@@ -143,22 +133,8 @@ const useStyles = makeStyles()((theme) => {
       [theme.breakpoints.down('sm')]: {
         width: '350px',
       }
-    },
-    pageAbout: {
-      backgroundImage: 'url(/images/bgAbout.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'left center',
-      [theme.breakpoints.down('sm')]: {
-        backgroundImage: 'url(/images/bgAboutSm.png)',
-        backgroundPosition: 'center center',
-        paddingBottom: '600px'
-      }
-    },
-    formBox: {
-      maxWidth: '520px',
-      minWidth: '350px',
-      margin: '80px auto 0'
-    }
+    },    
+    */
 
   }
 })
@@ -239,6 +215,7 @@ const Home = () => {
 
       {
         /*
+          (Jogar para a LP de vendas)
           <Container maxWidth={`100vw`} className={classes.containerPages}>
             <Container maxWidth={'md'}>
               {
@@ -541,7 +518,7 @@ const Home = () => {
 
       {
         /*
-          Preços
+          Preços (Jogar para a LP de vendas)
           <Container maxWidth={`100vw`} className={classes.containerPages}>
             <Container maxWidth={'md'}>
               <Typography textAlign={'center'}  style={{margin: '0 auto 80px'}} className={classes.title}>
@@ -612,17 +589,30 @@ const Home = () => {
       {
         //Quarta página (sobre)
       }
-      <Container maxWidth={`100vw`} className={`${classes.pageAbout} ${classes.containerPages}`}>
+      <Container maxWidth={`100vw`} className={`${classes.pageAbout} ${classes.common_padding}`}>
         <Container maxWidth={'md'}>
-          <Typography  color={'#1C92D2'} className={classes.subTitle}>
+          <Typography
+            variant={'h2'}  
+            fontSize={'24px'}
+            lineHeight={'42px'}
+            className={classes.common_width}
+            color={'#75DBCD'}
+          >
             SOBRE
           </Typography>
 
-          <Typography color={'#EBE5E5'} className={classes.title}>
+          <Typography 
+            variant={'h2'} 
+            fontSize={'32px'}
+            lineHeight={'42px'}
+            className={classes.common_width}
+            color={'#EBE5E5'}
+            style={{marginBottom: '16px'}}
+          >
             HELANO MARIZ
           </Typography>
           
-          <Typography color={'#EBE5E5'} className={classes.textWidth}>
+          <Typography color={'#EBE5E5'} className={classes.common_width}>
             Na minha caminhada ministerial, mesmo sem compreender na época, no início dos anos 2002, quando minha esposa Renata Mariz enfrentou uma intensa depressão, percebi a importância do cuidado humano. <br/><br/>Desde então, passei a me dedicar ainda mais ao próximo, sendo reconhecido por muitos como um verdadeiro e fiel conselheiro. Ao longo dessa jornada, novos projetos e desafios foram sugeridos, tanto na área empreendedora quanto no cuidado humano. <br/><br/>Então me especializei em diversas áreas, sendo hoje: Analista comportamental, Especialista em sexologia e psicologia e Profissional em Coach. Tudo isso com o intuito de ajudar diferentes pessoas, em diferentes áreas de suas vidas.
           </Typography>
         </Container>
@@ -631,14 +621,29 @@ const Home = () => {
       {
         //Quinta página (formulário)
       }
-      <Container maxWidth={`100vw`} className={classes.containerPages}>
+      <Container maxWidth={`100vw`} className={`${classes.section_6} ${classes.common_padding}`}>
         <Container maxWidth={'md'} ref={formRef}>
-          <Typography  textAlign={'center'} style={{margin: '0 auto'}} className={classes.title}>
+          <Typography  
+            textAlign={'center'} 
+            variant={'h2'}
+            fontSize={'32px'}
+            lineHeight={'42px'}
+            className={classes.common_width}
+            color={'primary'}
+            style={{margin: '0 auto 16px'}} 
+          >
             Agora é hora de fazer a sua inscrição
           </Typography>
 
-          <Typography textAlign={'center'} style={{marginBottom: '80px 0'}}>
-            Informe seu melhor e-mail e WhatsApp para te avisarmos sobre as aulas
+          <Typography
+            variant={'body1'}
+            fontSize={'16px'}
+            lineHeight={'26px'}
+            className={classes.common_width}
+            textAlign={'center'} 
+            style={{margin: '0 auto'}}
+          >
+            Informe seu melhor e-mail e WhatsApp para te avisarmos sobre a Live. <strong>No dia 04 de março, às 20:00. No YouTube ao vivo e 100% gratuito.</strong>
           </Typography>
 
           <Box className={classes.formBox}>
@@ -717,7 +722,13 @@ const Home = () => {
                             {errors.phone && touched.phone ? errors.phone : null}
                           </FormHelperText>
                         </FormControl>
-                        <Button variant='contained' size='large' color='secondary' style={{display: 'block', margin: '80px auto 0px'}} className={classes.button} type='submit'>
+                        <Button 
+                          variant='contained' 
+                          size='large' 
+                          color='primary' 
+                          style={{display: 'block', margin: '80px auto 0px'}} 
+                          className={classes.button} type='submit'
+                        >
                           {
                             isSubmitting ? 
                               <CircularProgress color={'secondary'} /> :
