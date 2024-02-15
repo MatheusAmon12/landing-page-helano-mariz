@@ -44,6 +44,7 @@ const useStyles = makeStyles()((theme) => {
       fontSize: '24px',
       fontWeight: 'normal',
       lineHeight: '34px',
+      marginBottom: '80px',
       [theme.breakpoints.down('sm')]: {
         width: '350px',
         fontSize: '18px',
@@ -51,7 +52,6 @@ const useStyles = makeStyles()((theme) => {
       }
     },
     button: {
-      marginTop: '80px',
       height: '60px',
       width: '350px',
       fontFamily: 'Roboto, sans-serif',
@@ -70,6 +70,18 @@ const useStyles = makeStyles()((theme) => {
     },
     section_3: {
       backgroundColor: theme.palette.background.default
+    },
+    section_4: {
+      backgroundImage: 'url(/images/bgDobra4.jpg)',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'cover'
+    },
+    orderedList: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '16px',
+      marginBottom: '24px',
+      color: '#EBE5E5',
     },
     box: {
       background: 'rgb(5,117,230)',
@@ -424,6 +436,106 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
+        </Container>
+      </Container>
+
+      {
+        //Seção 4
+      }
+
+      <Container maxWidth={'100vw'} className={`${classes.section_4} ${classes.common_padding}`}>
+        <Container maxWidth={'md'}>
+          <Box>
+            <Typography
+              variant={'h2'}
+              fontSize={'32px'}
+              lineHeight={'42px'}
+              className={classes.common_width}
+              color={'#EBE5E5'}
+              style={{marginBottom: '16px'}}
+            >
+              O que essa aula vai fazer por você?
+            </Typography>
+            <Typography
+              variant={'body1'}
+              fontSize={'24px'}
+              lineHeight={'34px'}
+              className={classes.common_width}
+              color={'#EBE5E5'}
+              style={{marginBottom: '40px'}}
+            >
+              Irá ajudá-las a terem um lar restaurado, onde a paz e a graça de Deus habita.
+            </Typography>
+          </Box>
+
+          <Box>
+            <Typography
+              variant={'h2'}
+              fontSize={'32px'}
+              lineHeight={'42px'}
+              className={classes.common_width}
+              color={'#EBE5E5'}
+              style={{marginBottom: '16px'}}
+            >
+              Como?
+            </Typography>
+            <Typography
+              variant={'body1'}
+              fontSize={'24px'}
+              lineHeight={'34px'}
+              className={classes.common_width}
+              color={'#EBE5E5'}
+              style={{marginBottom: '24px'}}
+            >
+              Por meio de direcionamentos simples iremos explicar sobre:
+            </Typography>
+          </Box>
+
+          <ol className={`${classes.orderedList} ${classes.common_width}`}>
+            <li>
+              O valor da mulher sábia: Destacando a importância da sabedoria e da virtude na mulher. Falando sobre como a sabedoria contribui para o fortalecimento dos relacionamentos familiares.
+            </li>
+
+            <li>
+              Trabalho e dedicação da mulher sábia: Analisando a diligência e a dedicação da mulher sábia em suas responsabilidades. Incentivando a audiência a cultivar uma ética de trabalho sólida e comprometida.
+            </li>
+
+            <li>
+              Habilidade e generosidade da mulher sábia: Explorando as habilidades e a generosidade da mulher sábia em fornecer para sua família. Sugerindo maneiras práticas de exercer generosidade e cuidado com os seus.
+            </li>
+          </ol>
+
+          <Box>
+            <Typography
+              variant={'h2'}
+              fontSize={'32px'}
+              lineHeight={'42px'}
+              className={classes.common_width}
+              color={'#EBE5E5'}
+              style={{marginBottom: '16px'}}
+            >
+              BÔNUS
+            </Typography>
+            <Typography
+              variant={'body1'}
+              fontSize={'16px'}
+              lineHeight={'26px'}
+              className={classes.common_width}
+              color={'#EBE5E5'}
+              style={{marginBottom: '80px'}}
+            >
+              <span style={{fontWeight: 'bold'}}>Impacto duradouro da mulher sábia:</span> Conclua destacando o impacto duradouro que uma mulher sábia pode ter na restauração e fortalecimento das famílias. Incentive a audiência a buscar a sabedoria de Deus para orientar suas vidas e relacionamentos.
+            </Typography>
+          </Box>
+
+          <Button 
+            variant='contained' 
+            color='tertiary' 
+            className={classes.button}
+            onClick={goToForm}
+          >
+            Quero participar
+          </Button>
         </Container>
       </Container>
 
