@@ -68,6 +68,16 @@ const useStyles = makeStyles()((theme) => {
       backgroundAttachment: 'fixed',
       backgroundPosition: 'center center'
     },
+    section_3: {
+      backgroundColor: theme.palette.background.default
+    },
+    box: {
+      background: 'rgb(5,117,230)',
+      background: 'linear-gradient(90deg, rgba(5,117,230,1) 0%, rgba(2,27,121,1) 100%)',
+      padding: '15px 25px',
+      borderRadius: '7px',
+      width: '430px',
+    },
     common_padding: {
       padding: '159px 0'
     },
@@ -312,6 +322,10 @@ const Home = () => {
         */
       }
 
+      {
+        //Seção 2
+      }
+
       <Container maxWidth={'100vw'} className={`${classes.section_2} ${classes.common_padding}`}>
         <Container maxWidth={'md'}>
           <Typography 
@@ -319,6 +333,7 @@ const Home = () => {
             fontSize={'24px'} 
             lineHeight={'34px'} 
             className={`${classes.common_width} ${classes.margin_subtitle}`}
+            color={'primary'}
             style={{margin: '0 auto 24px'}}
           >
             Já imaginou ter uma família onde as brigas são eventuais e alegria e o amor são cotidianos e frequentes?
@@ -330,78 +345,157 @@ const Home = () => {
             className={classes.common_width}
             style={{margin: '0 auto'}}
           >
-            Eu sei o quanto é difícil chegar em casa e se sentir ainda mais cansada, pois o lugar onde deveria ser de descanso parece um campo de guerra. São inúmeras tarefas para fazer, discussões exaustivas e repetitivas com os filhos e o marido. Mas imagine se existisse como ter uma família em que as conversas são regadas de risos e voltar para casa fosse tudo que você mais quisesse ao fim do dia?
+            Eu sei o quanto é difícil chegar em casa e se sentir ainda mais cansada, pois o lugar onde deveria ser de descanso parece um campo de guerra. São inúmeras tarefas para fazer, discussões exaustivas e repetitivas com os filhos e o marido. Mas imagine se existisse como ter uma família em que as conversas são regadas de risos e voltar para casa fosse tudo que você mais quisesse ao fim do dia?
           </Typography>
         </Container>
       </Container>
 
       {
-        //Terceira página (preços)
+        //Seção 3
       }
-      <Container maxWidth={`100vw`} className={classes.containerPages}>
+
+      <Container maxWidth={'100vw'} className={`${classes.section_3} ${classes.common_padding}`}>
         <Container maxWidth={'md'}>
-          <Typography textAlign={'center'}  style={{margin: '0 auto 80px'}} className={classes.title}>
-            Tenha uma mudança de pensamento e viva o seu propósito com Deus
-          </Typography>
+          <Grid container alignItems={'center'} justifyContent={'center'}>
+            <Grid item md={6} sm={12}>
+              <Typography
+                variant={'h2'}
+                fontSize={'24px'} 
+                lineHeight={'26px'}
+                color={'primary'} 
+                style={{width: '350px'}}
+              >
+                ISSO É POSSÍVEL! NESSE EVENTO EU IREI TE ENSINAR COMO TER UMA FAMÍLIA ACOLHEDORA E FELIZ EM TRÊS PASSOS. SENDO ELES:
+              </Typography>
+            </Grid>
+            <Grid item md={6} sm={12}>
+              <Grid container rowGap={'24px'}>
+                <Grid item md={12}>
+                  <Box className={`${classes.box}`}>
+                    <Typography
+                      variant={'body1'}
+                      fontSize={'24px'}
+                      lineHeight={'34px'}
+                      color={'#EBE5E5'}
+                    >
+                      <span style={{fontWeight: 'bold'}}>O valor da mulher sábia:</span> como a sabedoria contribui para o fortalecimento da família.
+                    </Typography>
+                  </Box>
+                </Grid>
 
-          <Box className={classes.priceBox}>
-            <Typography 
-              textAlign={'center'} 
-            >
-              <s>de R$997,90</s>
-            </Typography>
+                <Grid item md={12}>
+                  <Box className={`${classes.box}`}>
+                    <Typography
+                      variant={'body1'}
+                      fontSize={'24px'}
+                      lineHeight={'34px'}
+                      color={'#EBE5E5'}
+                    >
+                      <span style={{fontWeight: 'bold'}}>Trabalho e dedicação da mulher sábia:</span> cultive a ética de trabalhar e ser comprometida com os seu.
+                    </Typography>
+                  </Box>
+                </Grid>
 
-            <Typography 
-              textAlign={'center'} 
-              style={{
-                fontSize: '24px',
-              }}
-            >
-              por apenas
-            </Typography>
+                <Grid item md={12}>
+                  <Box className={`${classes.box}`}>
+                    <Typography
+                      variant={'body1'}
+                      fontSize={'24px'}
+                      lineHeight={'34px'}
+                      color={'#EBE5E5'}
+                    >
+                      <span style={{fontWeight: 'bold'}}>Habilidade e generosidade da mulher sábia:</span> práticas para exercer a generosidade e o cuidado no seu lar.
+                    </Typography>
+                  </Box>
+                </Grid>
 
-            <Typography 
-              textAlign={'center'} 
-              style={{
-                fontSize: '32px', 
-                fontWeight: 'bold',
-              }}
-            >
-              12x de
-            </Typography>
-
-            <Typography 
-              textAlign={'center'} 
-              style={{
-                fontSize: '88px', 
-                fontWeight: 'bold',
-              }}
-            >
-              R$57,90
-            </Typography>
-
-            <Typography 
-              textAlign={'center'} 
-              style={{
-                fontSize: '24px',
-              }}
-            >
-              ou R$597,90 à vista
-            </Typography>
-
-            <Button 
-              variant='contained' 
-              size='large' 
-              color='secondary' 
-              style={{display: 'block', margin: '80px auto 0px'}} 
-              className={classes.button}
-              onClick={goToForm}
-            >
-              Quero participar
-            </Button>
-          </Box>
+                <Grid item md={12}>
+                  <Box className={`${classes.box}`}>
+                    <Typography
+                      variant={'body1'}
+                      fontSize={'24px'}
+                      lineHeight={'34px'}
+                      color={'#EBE5E5'}
+                    >
+                      <span style={{fontWeight: 'bold'}}>BÔNUS:</span> como ter a sabedoria de Deus para orientar suas vida e seu lar
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Container>
       </Container>
+
+      {
+        /*
+          Preços
+          <Container maxWidth={`100vw`} className={classes.containerPages}>
+            <Container maxWidth={'md'}>
+              <Typography textAlign={'center'}  style={{margin: '0 auto 80px'}} className={classes.title}>
+                Tenha uma mudança de pensamento e viva o seu propósito com Deus
+              </Typography>
+    
+              <Box className={classes.priceBox}>
+                <Typography 
+                  textAlign={'center'} 
+                >
+                  <s>de R$997,90</s>
+                </Typography>
+    
+                <Typography 
+                  textAlign={'center'} 
+                  style={{
+                    fontSize: '24px',
+                  }}
+                >
+                  por apenas
+                </Typography>
+    
+                <Typography 
+                  textAlign={'center'} 
+                  style={{
+                    fontSize: '32px', 
+                    fontWeight: 'bold',
+                  }}
+                >
+                  12x de
+                </Typography>
+    
+                <Typography 
+                  textAlign={'center'} 
+                  style={{
+                    fontSize: '88px', 
+                    fontWeight: 'bold',
+                  }}
+                >
+                  R$57,90
+                </Typography>
+    
+                <Typography 
+                  textAlign={'center'} 
+                  style={{
+                    fontSize: '24px',
+                  }}
+                >
+                  ou R$597,90 à vista
+                </Typography>
+    
+                <Button 
+                  variant='contained' 
+                  size='large' 
+                  color='secondary' 
+                  style={{display: 'block', margin: '80px auto 0px'}} 
+                  className={classes.button}
+                  onClick={goToForm}
+                >
+                  Quero participar
+                </Button>
+              </Box>
+            </Container>
+          </Container> 
+        */
+      }
       
       {
         //Quarta página (sobre)
