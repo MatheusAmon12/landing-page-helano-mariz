@@ -11,7 +11,7 @@ import Link from 'next/link'
 const useStyles = makeStyles()((theme) => {
     return{
         footer: {
-            backgroundColor: theme.palette.secondary.main,
+            backgroundColor: theme.palette.primary.main,
             padding: '197px 0',
         },
         container: {
@@ -58,16 +58,21 @@ const Footer = () => {
                 </Grid>
 
                 <Grid item>
-                    <Typography color={'white'}>
+                    <Typography color={'#75DBCD'}>
                         suporte@imersaohelanomariz.com
                     </Typography>
                 </Grid>
             </Grid>
 
-            <Typography color={'white'} textAlign={'center'}>
+            <Typography color={'#75DBCD'} textAlign={'center'}>
                 <Link 
                     passHref 
-                    href={'mailto:suporte@imersaohelanomariz.com?subjet=Quero mais informações'} style={{paddingRight: '5px', textDecoration: 'none', color: 'white'}}
+                    href={'mailto:suporte@imersaohelanomariz.com?subjet=Quero mais informações'} 
+                    style={{
+                        paddingRight: '5px', 
+                        textDecoration: 'none', 
+                        color: '#75DBCD'
+                    }}
                     target='_blank'
                 >
                     Informações   
@@ -75,7 +80,11 @@ const Footer = () => {
                 | 
                 <Link 
                     passHref href={'mailto:suporte@imersaohelanomariz.com'} 
-                    style={{paddingLeft: '5px', textDecoration: 'none', color: 'white'}}
+                    style={{
+                        paddingLeft: '5px', 
+                        textDecoration: 'none', 
+                        color: '#75DBCD'
+                    }}
                     target='_blank'
                 >
                     Suporte
