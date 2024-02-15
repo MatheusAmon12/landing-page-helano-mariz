@@ -12,10 +12,11 @@ import { initialValues, validationSchema } from '../utils/formValues'
 const useStyles = makeStyles()((theme) => {
   return{
     containerTop: {
-      padding: '80px 0 197px',
       backgroundImage: 'url(/images/bgTop.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
+      height: '915px',
+      padding: '80px 0',
       [theme.breakpoints.down('sm')]: {
         backgroundImage: 'url(/images/bgTopSm.png)',
         backgroundPosition: 'center center',
@@ -27,7 +28,7 @@ const useStyles = makeStyles()((theme) => {
       backgroundColor: theme.palette.background.default
     },
     promise: {
-      margin: '80px 0 24px',
+      margin: '40px 0 8px',
       width: '430px',
       fontSize: '38px',
       lineHeight: '48px',
@@ -41,9 +42,8 @@ const useStyles = makeStyles()((theme) => {
     subPromise: {
       width: '430px',
       fontSize: '24px',
-      fontWeight: 'bold',
+      fontWeight: 'normal',
       lineHeight: '34px',
-      color: '#1a1a1a',
       [theme.breakpoints.down('sm')]: {
         width: '350px',
         fontSize: '18px',
@@ -53,10 +53,32 @@ const useStyles = makeStyles()((theme) => {
     button: {
       marginTop: '80px',
       height: '60px',
-      width: '430px',
+      width: '350px',
+      fontFamily: 'Roboto, sans-serif',
+      fontWeight: 'bold',
+      fontSize: '24px',
+      color: '#EBE5E5',
       [theme.breakpoints.down('sm')]: {
         width: '320px',
       }
+    },
+    section_2: {
+      backgroundImage: 'url(/images/bgDobra2.jpg)',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center center'
+    },
+    common_padding: {
+      padding: '159px 0'
+    },
+    common_width: {
+      width: '430px',
+      [theme.breakpoints.down('sm')]: {
+        width: '350px'
+      }
+    },
+    margin_subtitle: {
+      marginBottom: '24px'
     },
     textWidth: {
       width: '430px',
@@ -169,18 +191,17 @@ const Home = () => {
         <Container maxWidth={'md'}>
           <img src='/images/logoHumanizar.png' />
 
-          <Typography color={'secondary'} className={classes.promise}>
-            Valorizando a essência
+          <Typography variant={'h1'} color={'#EBE5E5'} className={classes.promise}>
+            Mulheres sábias, famílias restauradas. Descubra como transformar sua vida e restaurar seu lar, tornando-se uma mulher sábia.
           </Typography>
 
-          <Typography className={classes.subPromise}>
-            Evite a autocondenação, busque a transformação. Em um mundo onde constantemente nos comparamos e nos autodepreciamos, aprenda como olhar para dentro de si e apreciar a riqueza que o Senhor lhe entregou
+          <Typography variant={'h2'} color={'#EBE5E5'} className={classes.subPromise}>
+            No dia 04 de março, às 20:00. No YouTube ao vivo e 100% gratuito.
           </Typography>
 
           <Button 
             variant='contained' 
-            size='large' 
-            color='secondary' 
+            color='tertiary' 
             className={classes.button}
             onClick={goToForm}
           >
@@ -193,96 +214,124 @@ const Home = () => {
       {
         //Segunda página (módulos da imersão)
       }
-      <Container maxWidth={`100vw`} className={classes.containerPages}>
-        <Container maxWidth={'md'}>
-          {
-            //Grid do ícone Brain com todo conteúdo
-          }
-          <Grid container rowSpacing={'160'} className={classes.grid}>
-            <Grid item md={6} sm={12}>
-              <img src='/images/brainIcon.png' className={classes.brainIcon}/>
-            </Grid>
 
-            <Grid item md={6} sm={12}>
-              <Typography  className={ classes.title }>
-                Irei te ajudar a superar os traumas e encontrar equilíbrio em seus relacionamentos
-              </Typography>
-
+      {
+        /*
+          <Container maxWidth={`100vw`} className={classes.containerPages}>
+            <Container maxWidth={'md'}>
               {
-                //Grid do conjunto de ícones e textos
+                //Grid do ícone Brain com todo conteúdo
               }
-              <Grid container rowSpacing={'32'}>
-                <Grid item>
+              <Grid container rowSpacing={'160'} className={classes.grid}>
+                <Grid item md={6} sm={12}>
+                  <img src='/images/brainIcon.png' className={classes.brainIcon}/>
+                </Grid>
+    
+                <Grid item md={6} sm={12}>
+                  <Typography  className={ classes.title }>
+                    Irei te ajudar a superar os traumas e encontrar equilíbrio em seus relacionamentos
+                  </Typography>
+    
                   {
-                    //Grid do ícone e seu respectivo texto
+                    //Grid do conjunto de ícones e textos
                   }
-                  <Grid container className={classes.grid}>
-                    <Grid item md={6} sm={12}>
-                      <img src='/images/iconConhece-te.png' />
+                  <Grid container rowSpacing={'32'}>
+                    <Grid item>
+                      {
+                        //Grid do ícone e seu respectivo texto
+                      }
+                      <Grid container className={classes.grid}>
+                        <Grid item md={6} sm={12}>
+                          <img src='/images/iconConhece-te.png' />
+                        </Grid>
+                        
+                        <Grid item md={6} sm={12}>
+                          <Typography  className={classes.subTitle}>
+                            Conhece-te
+                          </Typography>
+    
+                          <Typography className={classes.textWidth}>
+                            No primeiro módulo dessa imersão, você compreenderá o poder que está dentro de cada um de nós, através do amor de Deus. Aqui você irá entender e ressignificar sua história.
+                          </Typography>
+                        </Grid>
+                      </Grid>
                     </Grid>
-                    
-                    <Grid item md={6} sm={12}>
-                      <Typography  className={classes.subTitle}>
-                        Conhece-te
-                      </Typography>
-
-                      <Typography className={classes.textWidth}>
-                        No primeiro módulo dessa imersão, você compreenderá o poder que está dentro de cada um de nós, através do amor de Deus. Aqui você irá entender e ressignificar sua história.
-                      </Typography>
+    
+                    <Grid item>
+                      <Grid container className={classes.grid}>
+                        <Grid item md={6} sm={12}>
+                          <img src='/images/iconAceita-te.png' />
+                        </Grid>
+                        
+                        <Grid item md={6} sm={12}>
+                          <Typography  className={classes.subTitle}>
+                            Aceita-te
+                          </Typography>
+    
+                          <Typography className={classes.textWidth}>
+                            Nesse segundo módulo vamos identificar o que tem te impedido de se relacionar melhor com as pessoas a sua volta e o que tem te travado em realizar seu sonhos.
+                          </Typography>
+                        </Grid>
+                      </Grid> 
+                    </Grid>
+    
+                    <Grid item>
+                      <Grid container className={classes.grid}>
+                        <Grid item md={6} sm={12}>
+                          <img src='/images/iconTransforma-te.png' />
+                        </Grid>
+                        
+                        <Grid item md={6} sm={12}>
+                          <Typography  className={classes.subTitle}>
+                            Supera-te
+                          </Typography>
+    
+                          <Typography className={classes.textWidth}>
+                            Por fim,  após identificar as áreas da sua vida que precisam ser mudadas,  vamos elaborar um plano de ação para que haja mudança de fato em sua vida . E assim você estará pronta para uma vida de equilíbrio e superação.
+                          </Typography>
+                        </Grid>
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-
-                <Grid item>
-                  <Grid container className={classes.grid}>
-                    <Grid item md={6} sm={12}>
-                      <img src='/images/iconAceita-te.png' />
-                    </Grid>
-                    
-                    <Grid item md={6} sm={12}>
-                      <Typography  className={classes.subTitle}>
-                        Aceita-te
-                      </Typography>
-
-                      <Typography className={classes.textWidth}>
-                        Nesse segundo módulo vamos identificar o que tem te impedido de se relacionar melhor com as pessoas a sua volta e o que tem te travado em realizar seu sonhos.
-                      </Typography>
-                    </Grid>
-                  </Grid> 
-                </Grid>
-
-                <Grid item>
-                  <Grid container className={classes.grid}>
-                    <Grid item md={6} sm={12}>
-                      <img src='/images/iconTransforma-te.png' />
-                    </Grid>
-                    
-                    <Grid item md={6} sm={12}>
-                      <Typography  className={classes.subTitle}>
-                        Supera-te
-                      </Typography>
-
-                      <Typography className={classes.textWidth}>
-                        Por fim,  após identificar as áreas da sua vida que precisam ser mudadas,  vamos elaborar um plano de ação para que haja mudança de fato em sua vida . E assim você estará pronta para uma vida de equilíbrio e superação.
-                      </Typography>
-                    </Grid>
-                  </Grid>
+    
+                  <Button 
+                    variant='contained' 
+                    size='large' 
+                    color='secondary' 
+                    className={classes.button}
+                    onClick={goToForm}
+                  >
+                    Quero participar
+                  </Button>
+    
                 </Grid>
               </Grid>
+              
+            </Container>
+          </Container>       
+        */
+      }
 
-              <Button 
-                variant='contained' 
-                size='large' 
-                color='secondary' 
-                className={classes.button}
-                onClick={goToForm}
-              >
-                Quero participar
-              </Button>
+      <Container maxWidth={'100vw'} className={`${classes.section_2} ${classes.common_padding}`}>
+        <Container maxWidth={'md'}>
+          <Typography 
+            variant={'h2'} 
+            fontSize={'24px'} 
+            lineHeight={'34px'} 
+            className={`${classes.common_width} ${classes.margin_subtitle}`}
+            style={{margin: '0 auto 24px'}}
+          >
+            Já imaginou ter uma família onde as brigas são eventuais e alegria e o amor são cotidianos e frequentes?
+          </Typography>
 
-            </Grid>
-          </Grid>
-          
+          <Typography 
+            variant={'body1'} 
+            lineHeight={'26px'} 
+            className={classes.common_width}
+            style={{margin: '0 auto'}}
+          >
+            Eu sei o quanto é difícil chegar em casa e se sentir ainda mais cansada, pois o lugar onde deveria ser de descanso parece um campo de guerra. São inúmeras tarefas para fazer, discussões exaustivas e repetitivas com os filhos e o marido. Mas imagine se existisse como ter uma família em que as conversas são regadas de risos e voltar para casa fosse tudo que você mais quisesse ao fim do dia?
+          </Typography>
         </Container>
       </Container>
 

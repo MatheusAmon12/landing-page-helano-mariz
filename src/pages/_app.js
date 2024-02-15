@@ -15,6 +15,9 @@ export default function MyApp({ Component, pageProps }) {
       <Head>
         <title> Helano Mariz </title>
         <link rel="shortcut icon" href="/images/logoHumanizar.png" type="image/png" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
         <meta name="facebook-domain-verification" content="1f6fbm5ibnhh1ifko2pjif2pqdsipe" />
 
         <script dangerouslySetInnerHTML={{__html: `
