@@ -81,7 +81,7 @@ const ThankYouPage = () => {
                     <Button 
                       variant='contained' 
                       size='large' 
-                      color={'quaternary'} 
+                      color={'tertiary'} 
                       style={{gap: '10px'}}
                       className={classes.button}
                     >
