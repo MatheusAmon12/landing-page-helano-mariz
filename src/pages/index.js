@@ -12,15 +12,13 @@ import { initialValues, validationSchema } from '../utils/formValues'
 const useStyles = makeStyles()((theme) => {
   return{
     containerTop: {
+      height: '915px',
+      padding: '80px 0',
       backgroundImage: 'url(/images/bgTop.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
-      height: '915px',
-      padding: '80px 0',
       [theme.breakpoints.down('sm')]: {
-        backgroundImage: 'url(/images/bgTopSm.png)',
-        backgroundPosition: 'center center',
-        paddingBottom: '400px'
+        backgroundImage: 'url(/images/bgTopSm.jpg)',
       }
     },
     promise: {
@@ -62,7 +60,12 @@ const useStyles = makeStyles()((theme) => {
       backgroundImage: 'url(/images/bgDobra2.jpg)',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
-      backgroundPosition: 'center center'
+      backgroundPosition: 'center center',
+      [theme.breakpoints.down('sm')]: {
+        backgroundImage: 'url(/images/bgDobra2Sm.jpg)',
+        backgroundAttachment: 'scroll',
+        paddingBottom: '320px',
+      }
     },
     section_3: {
       backgroundColor: theme.palette.background.default
@@ -70,7 +73,10 @@ const useStyles = makeStyles()((theme) => {
     section_4: {
       backgroundImage: 'url(/images/bgDobra4.jpg)',
       backgroundSize: 'cover',
-      backgroundAttachment: 'cover'
+      [theme.breakpoints.down('sm')]: {
+        paddingBottom: '550px',
+        backgroundImage: 'url(/images/bgDobra4Sm.jpg)'
+      }
     },
     pageAbout: {
       backgroundImage: 'url(/images/bgAbout.png)',
@@ -102,7 +108,6 @@ const useStyles = makeStyles()((theme) => {
       background: 'linear-gradient(90deg, rgba(5,117,230,1) 0%, rgba(2,27,121,1) 100%)',
       padding: '15px 25px',
       borderRadius: '7px',
-      width: '430px',
     },
     common_padding: {
       padding: '159px 0'
@@ -345,7 +350,12 @@ const Home = () => {
 
       <Container maxWidth={'100vw'} className={`${classes.section_3} ${classes.common_padding}`}>
         <Container maxWidth={'md'}>
-          <Grid container alignItems={'center'} justifyContent={'center'}>
+          <Grid 
+            container 
+            alignItems={'center'} 
+            justifyContent={'center'}
+            rowGap={'16px'}
+          >
             <Grid item md={6} sm={12}>
               <Typography
                 variant={'h2'}
@@ -354,13 +364,17 @@ const Home = () => {
                 color={'primary'} 
                 style={{width: '350px'}}
               >
-                ISSO É POSSÍVEL! NESSE EVENTO EU IREI TE ENSINAR COMO TER UMA FAMÍLIA ACOLHEDORA E FELIZ EM TRÊS PASSOS. SENDO ELES:
+                <strong>ISSO É POSSÍVEL!</strong> Nesse evento eu irei te ensinar como ter uma família acolhedora e feliz em três passos. Sendo eles:
               </Typography>
             </Grid>
             <Grid item md={6} sm={12}>
-              <Grid container rowGap={'24px'}>
+              <Grid 
+                container 
+                justifyContent={'center'} 
+                rowGap={'24px'}
+              >
                 <Grid item md={12}>
-                  <Box className={`${classes.box}`}>
+                  <Box className={`${classes.box} ${classes.common_width}`}>
                     <Typography
                       variant={'body1'}
                       fontSize={'24px'}
@@ -373,7 +387,7 @@ const Home = () => {
                 </Grid>
 
                 <Grid item md={12}>
-                  <Box className={`${classes.box}`}>
+                  <Box className={`${classes.box} ${classes.common_width}`}>
                     <Typography
                       variant={'body1'}
                       fontSize={'24px'}
@@ -386,7 +400,7 @@ const Home = () => {
                 </Grid>
 
                 <Grid item md={12}>
-                  <Box className={`${classes.box}`}>
+                  <Box className={`${classes.box} ${classes.common_width}`}>
                     <Typography
                       variant={'body1'}
                       fontSize={'24px'}
@@ -399,7 +413,7 @@ const Home = () => {
                 </Grid>
 
                 <Grid item md={12}>
-                  <Box className={`${classes.box}`}>
+                  <Box className={`${classes.box} ${classes.common_width}`}>
                     <Typography
                       variant={'body1'}
                       fontSize={'24px'}
