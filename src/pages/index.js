@@ -153,29 +153,29 @@ const Home = () => {
   //definindo a referência inicial como null
   const formRef = useRef(null)
 
-  const handleFormSubmit = async (values) => {
+    const handleFormSubmit = async (values) => {
 
-    //requisição para a api
+      //requisição para a api
+      
+      const res = await fetch('/api/subscribeUser', {
+        body: JSON.stringify({
+          email: values.email,
+          name: values.name,
+          phone: values.phone,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
 
-    const res = await fetch('/api/subscribeUser', {
-      body: JSON.stringify({
-        email: values.email,
-        name: values.name,
-        phone: values.phone,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    });
-
-    const { error } = await res.json()
-
-    router.push({
-      pathname: '/thank/thankYouPage',
-      query: {name: values.name}
-    })
-  }
+      const { error } = await res.json()  
+      
+      router.push({
+        pathname: '/thank/thankYouPage',
+        query: {name: values.name}
+      })
+    }
 
   //scroll para a referência definida
   const goToForm = () => {

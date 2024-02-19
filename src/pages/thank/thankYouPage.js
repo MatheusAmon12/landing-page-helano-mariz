@@ -65,6 +65,10 @@ const ThankYouPage = () => {
 
     const { name } = router.query
 
+    const handleRedirect = (url) => {
+      router.push(url)
+    }
+
     return(
         <TemplateDefault>
             <Container maxWidth={'100vw'} className={classes.bgContainer}>
@@ -72,7 +76,7 @@ const ThankYouPage = () => {
                     <Typography component='h1' className={classes.title} color={'#FFF'} >
                         OBRIGADO,
                     </Typography>
-                    <Typography className={classes.name}>
+                    <Typography className={classes.name} color={'#75DBCD'}>
                         { name }
                     </Typography>
                     <Typography className={classes.text} color={'#FFF'}>
@@ -84,6 +88,7 @@ const ThankYouPage = () => {
                       color={'tertiary'} 
                       style={{gap: '10px'}}
                       className={classes.button}
+                      onClick={() => handleRedirect('https://chat.whatsapp.com/H5QegAtFQssGMgeh1eCS7R')}
                     >
                         <img src='/images/whatsAppIcon.png' />
                         <Typography style={{fontWeight: 'bolder'}} color={'#FFF'}> Participar do grupo</Typography>
