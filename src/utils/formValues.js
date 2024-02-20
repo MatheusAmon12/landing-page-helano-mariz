@@ -2,19 +2,19 @@ import * as yup from 'yup'
 
 //definindo os valores iniciais dos inputs do formulário
 const initialValues = {
-    name: '',
-    email: '',
-    phone: '',
+    NAME: '',
+    EMAIL: '',
+    PHONE: '',
 }
 
 //definindo as validações dos inputs
 const validationSchema = yup.object().shape({
-    name: yup.string()
+    NAME: yup.string()
         .required('Campo obrigatório!'),
-    email: yup.string()
+    EMAIL: yup.string()
         .email('Digite um email válido!')
         .required('Campo obrigatório!'),
-    phone: yup.number()
+    PHONE: yup.number()
         .required('Campo obrigatório!'),
 })
 

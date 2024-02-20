@@ -5,6 +5,7 @@ import { Box, Button, CircularProgress, Container, FormHelperText, Grid, Input, 
 import { makeStyles } from 'tss-react/mui'
 
 import { Formik } from 'formik'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 import TemplateDefault from '@/templates/Default'
 import { initialValues, validationSchema } from '../utils/formValues'
@@ -153,10 +154,10 @@ const Home = () => {
   //definindo a referência inicial como null
   const formRef = useRef(null)
 
-    const handleFormSubmit = async (values) => {
+    const handleFormSubmit = async (values, subscribe) => {
 
       //requisição para a api
-      
+      /*
       const res = await fetch('/api/subscribeUser', {
         body: JSON.stringify({
           email: values.email,
@@ -169,11 +170,20 @@ const Home = () => {
         method: 'POST',
       });
 
-      const { error } = await res.json()  
+      const { error } = await res.json() 
       
+      console.log(error)   
+      */
+      try {
+        const result = await subscribe(values)
+        console.log(result)
+      } catch (error) {
+        console.error("Erro ao inscrever no MailChimp:", error)
+      }
+
       router.push({
         pathname: '/thank/thankYouPage',
-        query: {name: values.name}
+        query: {name: values.NAME}
       })
     }
 
@@ -661,100 +671,111 @@ const Home = () => {
           </Typography>
 
           <Box className={classes.formBox}>
-            <Formik
-              initialValues={formValues}
-              validationSchema={validationSchema}
-              onSubmit={handleFormSubmit}
-            >
-              {
-                ({
-                  values,
-                  errors,
-                  touched,
-                  isSubmitting,
-                  handleChange,
-                  handleSubmit,
-                }) => {
-                    return(
-                      <form onSubmit={handleSubmit}>
-                        <FormControl>
-                          <InputLabel color='secondary'>
-                            Nome
-                          </InputLabel>
+            <MailchimpSubscribe 
+              url={'https://helanomariz.us21.list-manage.com/subscribe/post?u=df9722ee8d3116ef923edf0cf&amp;id=ac2f9ecb92&amp;f_id=000bede6f0'}
+              render={({ subscribe, status, message}) => (
 
-                          <Input
-                            name='name'
-                            fullWidth
-                            value={values.name}
-                            onChange={handleChange}
-                            color='secondary'
-                          />
+                <Formik
+                  initialValues={formValues}
+                  validationSchema={validationSchema}
+                  onSubmit={( values, {setSubmiting} ) => {
+                    handleFormSubmit(values, subscribe)
+                    setSubmiting(false)
+                  }}
+                >
+                  {
+                    ({
+                      values,
+                      errors,
+                      touched,
+                      isSubmitting,
+                      handleChange,
+                      handleSubmit,
+                    }) => {
+                        return(
+                          <form onSubmit={handleSubmit}>
+                            <FormControl>
+                              <InputLabel color='secondary'>
+                                Nome
+                              </InputLabel>
 
-                          <FormHelperText error>
-                            {errors.name && touched.name ? errors.name : null}
-                          </FormHelperText>
-                        </FormControl>
-                        <FormControl style={{margin: '40px 0px'}}>
-                          <InputLabel>
-                            E-mail
-                          </InputLabel>
+                              <Input
+                                name='NAME'
+                                fullWidth
+                                value={values.NAME}
+                                onChange={handleChange}
+                                color='secondary'
+                              />
 
-                          <FormHelperText>
-                            example@email.com
-                          </FormHelperText>
+                              <FormHelperText error>
+                                {errors.NAME && touched.NAME ? errors.NAME : null}
+                              </FormHelperText>
+                            </FormControl>
+                            <FormControl style={{margin: '40px 0px'}}>
+                              <InputLabel>
+                                E-mail
+                              </InputLabel>
 
-                          <Input
-                            name='email'
-                            fullWidth
-                            value={values.email}
-                            onChange={handleChange}
-                            color='secondary'
-                          />
+                              <FormHelperText>
+                                example@email.com
+                              </FormHelperText>
 
-                          <FormHelperText error>
-                            {errors.email && touched.email ? errors.email : null}
-                          </FormHelperText>
-                        </FormControl>
-                        <FormControl>
-                          <InputLabel>
-                            Celular
-                          </InputLabel>
+                              <Input
+                                name='EMAIL'
+                                fullWidth
+                                value={values.EMAIL}
+                                onChange={handleChange}
+                                color='secondary'
+                              />
 
-                          <FormHelperText>
-                            Digite apenas números, incluindo o DDD
-                          </FormHelperText>
+                              <FormHelperText error>
+                                {errors.EMAIL && touched.EMAIL ? errors.EMAIL : null}
+                              </FormHelperText>
+                            </FormControl>
+                            <FormControl>
+                              <InputLabel>
+                                Celular
+                              </InputLabel>
 
-                          <Input
-                            name='phone'
-                            fullWidth
-                            value={values.phone}
-                            onChange={handleChange}
-                            color='secondary'
-                          />
+                              <FormHelperText>
+                                Digite apenas números, incluindo o DDD
+                              </FormHelperText>
 
-                          <FormHelperText error>
-                            {errors.phone && touched.phone ? errors.phone : null}
-                          </FormHelperText>
-                        </FormControl>
-                        <Button 
-                          variant='contained' 
-                          size='large' 
-                          color='primary' 
-                          style={{display: 'block', margin: '80px auto 0px'}} 
-                          className={classes.button} type='submit'
-                        >
-                          {
-                            isSubmitting ? 
-                              <CircularProgress color={'secondary'} /> :
-                              'inscrever'
-                          }
-                        </Button>
-                      </form>
-                    )
+                              <Input
+                                name='PHONE'
+                                fullWidth
+                                value={values.PHONE}
+                                onChange={handleChange}
+                                color='secondary'
+                              />
+
+                              <FormHelperText error>
+                                {errors.PHONE && touched.PHONE ? errors.PHONE : null}
+                              </FormHelperText>
+                            </FormControl>
+                            <Button 
+                              variant='contained' 
+                              size='large' 
+                              color='primary' 
+                              style={{display: 'block', margin: '80px auto 0px'}} 
+                              className={classes.button} type='submit'
+                            >
+                              {
+                                isSubmitting ? 
+                                  <CircularProgress color={'secondary'} /> :
+                                  'inscrever'
+                              }
+                            </Button>
+                          </form>
+                        )
+                      }
                   }
-              }
+                
+                </Formik>
+
+              )}
             
-            </Formik>
+            />
           </Box>            
         </Container>
       </Container>

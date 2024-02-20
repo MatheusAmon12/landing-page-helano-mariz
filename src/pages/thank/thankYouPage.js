@@ -35,7 +35,7 @@ const useStyles = makeStyles()((theme) => {
         fontWeight: 'bold',
         marginBottom: '40px',
         width: '430px',
-        color: theme.palette.quaternary.main,
+        color: theme.palette.tertiary.main,
         [theme.breakpoints.down('sm')]: {
           width: '320px',
           fontSize: '16px',
@@ -76,7 +76,7 @@ const ThankYouPage = () => {
                     <Typography component='h1' className={classes.title} color={'#FFF'} >
                         OBRIGADO,
                     </Typography>
-                    <Typography className={classes.name} color={'#75DBCD'}>
+                    <Typography className={classes.name}>
                         { name }
                     </Typography>
                     <Typography className={classes.text} color={'#FFF'}>

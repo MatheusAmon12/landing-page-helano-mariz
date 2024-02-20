@@ -1,4 +1,5 @@
-import mailchimp from '@mailchimp/mailchimp_marketing'
+/*import mailchimp from '@mailchimp/mailchimp_marketing'
+
 
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
@@ -6,9 +7,9 @@ mailchimp.setConfig({
 })
 
 async function callPing() {
-    const response = await mailchimp.ping.get()
-    console.log(response, 'Conectou ao MailChimp!')
-  }
+  const response = await mailchimp.ping.get()
+  console.log(response, 'Conectou ao MailChimp!')
+}
   
 callPing()
 
@@ -26,8 +27,8 @@ export default async (req, res) => {
       status: 'subscribed',
     });
 
-    return res.status(201).json({ error: 'Deu errado a inscrição' });
+    return res.status(201).json({ succes: 'Inscrição realizada com sucesso!' });
   } catch (error) {
     return res.status(500).json({ error: error.message || error.toString() });
   }
-};
+};*/
