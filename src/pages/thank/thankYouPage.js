@@ -12,7 +12,7 @@ const useStyles = makeStyles()((theme) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         [theme.breakpoints.down('sm')]: {
-          backgroundImage: 'url(/images/thankyouPageBGSm.jpg)',
+          backgroundImage: 'url(/images/thankYouPageBGSm.jpg)',
         }
       },
       box: {
