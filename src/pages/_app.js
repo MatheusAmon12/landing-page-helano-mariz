@@ -2,12 +2,19 @@ import App from 'next/app'
 import Head from 'next/head'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { CacheProvider } from '@emotion/react'
+import { useEffect } from 'react'
+import TagManager from 'react-gtm-module'
 
 import createEmotionCache from '../../createEmotionCache'
 import theme from '@/theme'
 
+const GTM_ID = 'GTM-W5FK3GFP'
  
 export default function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: GTM_ID })
+  }, [])
+
   const cache = createEmotionCache()
 
   return (
@@ -26,7 +33,7 @@ export default function MyApp({ Component, pageProps }) {
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-W5FK3GFP');
-        `}} />
+        `}} />        
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-345210624" />
 
