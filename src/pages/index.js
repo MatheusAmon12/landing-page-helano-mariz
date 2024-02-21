@@ -700,7 +700,7 @@ const Home = () => {
                       handleSubmit,
                     }) => {
                         return(
-                          <form onSubmit={handleSubmit}>
+                          <form onSubmit={handleSubmit} id='formUser'>
                             <FormControl>
                               <InputLabel color='secondary'>
                                 Nome
