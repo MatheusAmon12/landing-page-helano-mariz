@@ -184,14 +184,21 @@ const Home = () => {
 
         const result = await subscribe(values)
         console.log(result)
+
+        router.push({
+          pathname: '/thank/thankYouPage',
+          query: {name: values.NAME}
+        })
+  
+        if(window.location.pathname === '/thank/thankYouPage') {
+          window.dataLayer.push({
+            event: 'leadCaptured',
+            leadSource: 'formulario'
+          })
+        }
       } catch (error) {
         console.error("Erro ao inscrever no MailChimp:", error)
       }
-
-      router.push({
-        pathname: '/thank/thankYouPage',
-        query: {name: values.NAME}
-      })
     }
 
   //scroll para a referência definida
