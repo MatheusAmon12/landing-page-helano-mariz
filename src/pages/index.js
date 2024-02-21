@@ -700,7 +700,7 @@ const Home = () => {
                       handleSubmit,
                     }) => {
                         return(
-                          <form onSubmit={handleSubmit} id='formUser'>
+                          <form onSubmit={handleSubmit}>
                             <FormControl>
                               <InputLabel color='secondary'>
                                 Nome
@@ -765,7 +765,9 @@ const Home = () => {
                               size='large' 
                               color='primary' 
                               style={{display: 'block', margin: '80px auto 0px'}} 
-                              className={classes.button} type='submit'
+                              className={classes.button}
+                              id='inscrever'
+                              type='submit'
                             >
                               {
                                 isSubmitting ? 
