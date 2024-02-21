@@ -175,6 +175,13 @@ const Home = () => {
       console.log(error)   
       */
       try {
+        //Enviando os dados para o GTM
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+          'event': 'gtm.formSubmit',
+          'formValues': values
+        })
+
         const result = await subscribe(values)
         console.log(result)
       } catch (error) {
